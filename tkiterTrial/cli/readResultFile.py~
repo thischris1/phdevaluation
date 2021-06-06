@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+
+import numpy as np
+
+resFile = open("resultFile.dat",'r')
+for line in resFile:
+    print (line)

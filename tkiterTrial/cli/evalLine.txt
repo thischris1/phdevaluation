@@ -1,0 +1,2 @@
+ cat resultFile.dat | awk '{print $1, $2, $3, $4, $5}' | sed '/]/d' > resultReformatted.dat
+

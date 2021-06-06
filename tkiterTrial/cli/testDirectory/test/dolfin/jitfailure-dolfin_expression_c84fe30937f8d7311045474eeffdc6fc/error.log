@@ -1,0 +1,4 @@
+/tmp/tmpnpcasssl/dolfin_expression_c84fe30937f8d7311045474eeffdc6fc.cpp: In member function ‘virtual void dolfin::dolfin_expression_c84fe30937f8d7311045474eeffdc6fc::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const’:
+/tmp/tmpnpcasssl/dolfin_expression_c84fe30937f8d7311045474eeffdc6fc.cpp:61:78: error: expected ‘)’ before ‘;’ token
+           values[0] = 1 + exp(-1.*(x[0]-0.5)*(x[0]-0.5)+(x[1]-0.5)*(x[1]-0.5);
+                                                                              ^

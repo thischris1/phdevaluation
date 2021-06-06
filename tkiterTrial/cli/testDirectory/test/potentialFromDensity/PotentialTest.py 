@@ -1,0 +1,4 @@
+import unittest
+import Potential.Potential
+
+class PotentialTest(unittest.Testcase):

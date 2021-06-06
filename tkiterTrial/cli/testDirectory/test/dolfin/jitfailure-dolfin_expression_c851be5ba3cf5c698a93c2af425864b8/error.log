@@ -1,0 +1,7 @@
+/tmp/tmp87f522an/dolfin_expression_c851be5ba3cf5c698a93c2af425864b8.cpp: In member function ‘virtual void dolfin::dolfin_expression_c851be5ba3cf5c698a93c2af425864b8::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const’:
+/tmp/tmp87f522an/dolfin_expression_c851be5ba3cf5c698a93c2af425864b8.cpp:61:47: error: invalid type argument of unary ‘*’ (have ‘int’)
+           values[0] = 1 + exp(-1.*(x[0]-0.5)**2+(x[1]-0.5)**2;
+                                               ^
+/tmp/tmp87f522an/dolfin_expression_c851be5ba3cf5c698a93c2af425864b8.cpp:61:61: error: invalid type argument of unary ‘*’ (have ‘int’)
+           values[0] = 1 + exp(-1.*(x[0]-0.5)**2+(x[1]-0.5)**2;
+                                                             ^

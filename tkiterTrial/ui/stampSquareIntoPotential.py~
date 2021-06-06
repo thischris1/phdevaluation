@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+import numpy as np
+
+import sys, os
+
+fileName = "testPotential"
+
+if len(sys.argv) > 1:
+    fileName = sys.argv[1]
+
+potentials = np.loadtxt(fileName)
+
+print (potentials.shape)

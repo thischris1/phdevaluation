@@ -1,0 +1,137 @@
+#!/usr/bin/python3
+
+import numpy as np
+import sys, os
+import matplotlib.pyplot as plt
+
+from matplotlib.figure import Figure
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+
+#fileName="HC-5-15-4000imps-vo-sigma-gap-var.dat"
+fileName="bla.dat"
+
+data=np.loadtxt(fileName)
+print (data[:,1].shape)
+new_array = [tuple(row) for row in data]
+uniques = np.unique(new_array)
+
+# Nimp = column 0 sigma = columm 1 vmax = colum 2 potvariance = colum3 gap = column4 spectrum --> rest
+print (data.shape)
+sigmas = data[:,1]
+vomax = np.round(data[:,1]*data[:,2],7)
+vmax = data[:,2]
+allSigmas = np.unique(sigmas)
+allVmax = np.unique(vmax)
+allVmaxSigmas = np.unique(vomax)
+print (allSigmas)
+print (allVmaxSigmas)
+resultList =[]
+for vmaxSigma in allVmaxSigmas:
+    subArray = data[np.where(data[:,1]*data[:,2] == vmaxSigma)]
+    
+    print (subArray.shape)
+    varMean = np.mean(subArray[:,3])
+    varvar = np.var(subArray[:,3])**2
+    gapMean = np.mean(subArray[:,4]-0.21)
+    gapVariance = np.var(subArray[:,4])**2
+    bandwidthMean = np.mean(subArray[:,7]-subArray[:,5])
+    bandwidthVar = np.var(subArray[:,7]-subArray[:,5])*np.var(subArray[:,7]-subArray[:,5])
+    
+    print(vmaxSigma, gapMean , gapVariance,varMean,varvar)
+    tuple = [vmaxSigma, gapMean , gapVariance,varMean,varvar,bandwidthMean, bandwidthVar]
+    resultList.append(tuple)
+
+
+# loop over whole array, use only those values which fit
+resultArr = np.asarray(resultList)
+# FIt Data to polynomial
+p4bandwidthw = np.poly1d(np.polyfit(resultArr[:,0], resultArr[:,5],4))
+print ("Fit result")
+print(p4bandwidthw)
+fitx = np.linspace(np.amin(resultArr[:,0]),np.amax(resultArr[:,0]),15)
+print (fitx)
+fitybw = p4bandwidthw(fitx)
+p4variance = np.poly1d(np.polyfit(resultArr[:,0], resultArr[:,3],4))
+fityvariance = p4variance(fitx)
+print (resultList)
+plt.plot(data[:,1]*data[:,2],data[:,4]-0.21,'ro')
+plt.errorbar(resultArr[:,0],resultArr[:,1], yerr=resultArr[:,2], mfc='red',mec='green', ms = 20, mew=4, lw = 3 )
+plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+plt.xlabel('$V_{max}\sigma$')
+plt.ylabel('$E_{gap}$ [enu]')
+plt.show()
+plt.errorbar(resultArr[:,0],resultArr[:,3], yerr=resultArr[:,4], mfc='red',mec='green', ms = 20, mew=4, lw = 3)
+#plt.plot(
+plt.xlabel('$V_{max}\sigma$')
+plt.ylabel('$var(V(r))$')
+plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+plt.show()
+plt.errorbar(resultArr[:,0],resultArr[:,5],yerr=resultArr[:,6],ms = 20, mew=4, lw = 3)
+plt.plot(fitx,fitybw,'--')
+plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
+plt.xlabel('$V_{max}\sigma$')
+plt.ylabel('Bandwidth')
+plt.show()
+plt.plot(data[:,3], data[:,4],'ro')
+plt.xlabel('var(V(r))')
+plt.ylabel('$E_{gap}$')
+plt.show()
+plt.plot(data[:,3],((data[:,8]-data[:,5])/(data[:,8]-data[:,7])-1), 'ro')
+plt.xlabel('var(V(r))')
+plt.ylabel('splitting')
+plt.show()
+
+
+exit()
+
+
+
+
+
+
+
+
+
+
+
+sigmaList = ()
+VmaxList = ()
+VmaxSigmaList =()
+for row in data:
+    aSigma = row[1]
+    if not aSigma in sigmaList:
+        print ("neues Sigma"+str(aSigma))
+        sigmaList = np.append(sigmaList,aSigma)
+    avmax = row[2]
+    if not avmax in VmaxList:
+        VmaxList = np.append(VmaxList,avmax)
+        print("neues Vmax" + str(avmax))
+    vmaxSigma = np.round(aSigma*avmax,7)
+
+    if not vmaxSigma in VmaxSigmaList:
+        VmaxSigmaList = np.append(VmaxSigmaList,vmaxSigma)
+        print (vmaxSigma)
+print (VmaxSigmaList)
+print (allVmaxSigmas)
+resultArray=[]
+for VmaxSigma in VmaxSigmaList:
+    count = 0
+    gapList =[]
+    varianceList =[]
+    for row in data:
+        tempVsigma = np.round(row[1]*row[2],7)
+        if VmaxSigma == tempVsigma:
+            count =count +1
+            gapList.append(row[4])
+            varianceList.append(row[3])
+
+    print (VmaxSigma,count)
+    print (VmaxSigma, np.mean(np.asarray(gapList)) , np.var(np.asarray(gapList)))
+plt.plot(data[:,1]*data[:,2],data[:,3],'ro')
+plt.show()

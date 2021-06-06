@@ -1,0 +1,25 @@
+import numpy as np
+from scipy.linalg import eigh
+from scipy.sparse.linalg import eigsh
+from scipy.sparse import csr_matrix
+from scipy.sparse import random
+from scipy import stats
+class CustomRandomState(np.random.RandomState):
+    def randint(self, k):
+        i = np.random.randint(k)
+        return i - i %2
+
+np.set_printoptions(suppress=False)
+
+np.random.seed(0)
+#X = np.random.random((10000,10000)) - 0.5
+rs = CustomRandomState()
+rvs = stats.poisson(25, loc=10).rvs
+print ("populate")
+S = random(100000, 100000, density=0.15, random_state=rs, data_rvs=rvs)
+print ("multiply")
+
+X = np.dot(S, S.T) #create a symmetric matrix
+print ("eigvec")
+evals_large, evecs_large = eigsh(X, 3, which='LM')
+print(evals_large)

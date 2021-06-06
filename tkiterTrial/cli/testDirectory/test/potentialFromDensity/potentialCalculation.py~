@@ -1,0 +1,22 @@
+#/usr/bin/python
+import Potential
+import sys
+import os
+import numpy as np
+import matplotlib.pyplot  as plt 
+fileName = "testDensity.dat"
+print "Start"
+if len(sys.argv) > 1:
+    fileName = sys.argv[1]
+
+myPotential = Potential.Potential(fileName)
+size = myPotential.density.size
+potList = np.array([])
+xSpace = np.linspace(0.0,1.0, 100)
+ySpace = np.linspace(0.0,1.0,size)
+for x in xSpace:
+    pot = myPotential.getPotentialatXY(x,x)
+    print x,x,pot
+    potList = np.append(potList,pot)
+plt.plot(potList)
+plt.show()

@@ -1,0 +1,23 @@
+./bs# root-name of basis file
+./state_hc# root-name of vector file
+./dnY0.0 # root-name of density file
+./ldY0.0 # root-name of landau-diagonal file
+./pot # root-name of potential file
+6 # Ne: Nr. of electrons
+18 # Nm: Nr. of flux quanta (i.e. Ne/Nm=filling factor
+0               # spinYes: 0=spin polarized, 1=not necessarily sp. pol.
+0               # reqSz: dtto, with total Sz (applies only if spinYes=1)
+2   # mat_type: 0=FULL_REAL, 1=SPARSE_REAL, 2=FULL_CPLX
+1  # type of vector-file to generate: 0->ascii, 1->raw binary
+6               # eigsToFind: Nr. of eigvals/eigvecs to be found
+1.0             # a: size of the system (vert.)
+1.0             # b: size of the system (horiz.)
+0.0             # bli: related to finite thickness
+0               # type of barrier potential: 0 -> gaussian, 1 -> delta
+0               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+-500.0          # energy-offset
+0.0             # flux of solenoid1 in units of h/e
+0.0             # flux of solenoid2 in units of h/e
+100             # xkmax: Sum from -kmax to kmax for Barrier in x-direction (resp. hole
+100             # ykmax: Sum from -kmax to kmax for Barrier in in y-direction (resp. hole
+random.dat

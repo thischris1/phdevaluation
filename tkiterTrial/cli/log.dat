@@ -1,0 +1,3021 @@
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_26
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_26.dat
+positions.dat
+CheckGaussianArray.dat26
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_26.dat
+evCorrelation_26.dat
+PotentialArray_26.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+1.0073529951917637 0.9660067336856593
+1.0010604616522554 (1.0073529951917637, 0.9660067336856593)
+ -489.4411282 -489.3781354 -489.3603482 -489.345363 -489.3148173 -489.2945253
+evCorrelation_26.dat
+First in corrfile x 0.0
+MAximum value is 0.5925925925925926 at 161
+161
+161
+160
+159
+158
+157
+156
+155
+Left end is 155
+Right value is 163
+Width = 8
+vortexVortexCorrelation_26.dat
+First in corrfile x 0.0
+MAximum value is 0.43037974683544306 at 315
+315
+315
+314
+313
+312
+311
+310
+309
+308
+307
+306
+Left end is 306
+Right value is 316
+Width = 10
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.01 -0.01 0.01 1.0010604616522554 [1.007353   0.96600673] 161 315 2.0908081048690966e-05  -489.4411282 -489.3781354 -489.3603482 -489.345363 -489.3148173 -489.2945253
+40 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_28
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+PotentialArray_28.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+evCorrelation_28.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_28.dat
+CheckGaussianArray.dat28
+result_28.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9920382070421083 0.9999009829611037
+1.000280760682682 (0.9920382070421083, 0.9999009829611037)
+ -531.2789996 -531.2437442 -531.1631541 -531.1461576 -531.103931 -531.085892
+evCorrelation_28.dat
+First in corrfile x 0.0
+MAximum value is 0.5428571428571428 at 174
+174
+174
+173
+Left end is 173
+Right value is 176
+Width = 3
+vortexVortexCorrelation_28.dat
+First in corrfile x 0.0
+MAximum value is 0.5112781954887218 at 265
+265
+265
+264
+Left end is 264
+Right value is 266
+Width = 2
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 1.000280760682682 [0.99203821 0.99990098] 174 265 2.0865900721711403e-05  -531.2789996 -531.2437442 -531.1631541 -531.1461576 -531.103931 -531.085892
+41 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_36
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_36.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_36.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat36
+PotentialArray_36.dat
+result_36.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+1.0224355513740306 0.9694805495203986
+0.9928752251562977 (1.0224355513740306, 0.9694805495203986)
+ -494.8857617 -494.8409569 -494.8166837 -494.754564 -494.7309956 -494.7227209
+evCorrelation_36.dat
+First in corrfile x 0.0
+MAximum value is 0.7757009345794392 at 106
+106
+106
+105
+Left end is 105
+Right value is 107
+Width = 2
+vortexVortexCorrelation_36.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9928752251562977 [1.02243555 0.96948055] 106 0 1.9741110485616305e-05  -494.8857617 -494.8409569 -494.8166837 -494.754564 -494.7309956 -494.7227209
+42 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_16
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_16.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat16
+result_16.dat
+vortexVortexCorrelation_16.dat
+evCorrelation_16.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9558678001206674 0.9792731661193556
+0.9732965317225624 (0.9558678001206674, 0.9792731661193556)
+ -510.2407677 -510.2070852 -510.1592861 -510.1419778 -510.0821238 -510.0703213
+evCorrelation_16.dat
+First in corrfile x 0.0
+MAximum value is 0.6797385620915033 at 152
+152
+152
+151
+150
+149
+Left end is 149
+Right value is 156
+Width = 7
+vortexVortexCorrelation_16.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9732965317225624 [0.9558678  0.97927317] 152 0 1.981787439189415e-05  -510.2407677 -510.2070852 -510.1592861 -510.1419778 -510.0821238 -510.0703213
+43 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_5
+evCorrelation2d.dat
+evalDensity_better.par
+result_5.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_5.dat
+PotentialArray_5.dat
+evCorrelation_5.dat
+CheckGaussianArray.dat5
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+13.825380278787609 42.390605295852644
+0.9812506059236553 (13.825380278787609, 42.390605295852644)
+ -443.5269242 -443.4524424 -443.3694672 -443.2732987 -443.2127015 -443.1723257
+evCorrelation_5.dat
+First in corrfile x 0.0
+MAximum value is 0.4166666666666667 at 191
+191
+191
+190
+189
+Left end is 189
+Right value is 192
+Width = 3
+vortexVortexCorrelation_5.dat
+First in corrfile x 0.0
+MAximum value is 2.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9812506059236553 [13.82538028 42.3906053 ] 191 0 2.078613565923284e-05  -443.5269242 -443.4524424 -443.3694672 -443.2732987 -443.2127015 -443.1723257
+44 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_40
+evCorrelation2d.dat
+evalDensity_better.par
+result_40.dat
+PotentialArray_40.dat
+positions.dat
+spectrum.dat
+CheckGaussianArray.dat40
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_40.dat
+evCorrelation_40.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+1.0438172160651247 0.9814529828208494
+1.0343475464303653 (1.0438172160651247, 0.9814529828208494)
+ -423.9958973 -423.8555407 -423.8005047 -423.7763793 -423.7583552 -423.6713567
+evCorrelation_40.dat
+First in corrfile x 0.0
+MAximum value is 0.391812865497076 at 170
+170
+170
+169
+168
+Left end is 168
+Right value is 171
+Width = 3
+vortexVortexCorrelation_40.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 1.0343475464303653 [1.04381722 0.98145298] 170 0 2.1578290296801272e-05  -423.9958973 -423.8555407 -423.8005047 -423.7763793 -423.7583552 -423.6713567
+45 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_41
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+vortexVortexCorrelation_41.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+evCorrelation_41.dat
+CheckGaussianArray.dat41
+result_41.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+PotentialArray_41.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9822583163493182 1.054778092444767
+0.9909132913346838 (0.9822583163493182, 1.054778092444767)
+ -547.3725983 -547.315701 -547.2599406 -547.231467 -547.185166 -547.1119845
+evCorrelation_41.dat
+First in corrfile x 0.0
+MAximum value is 0.75 at 3
+3
+3
+2
+Left end is 2
+Right value is 4
+Width = 2
+vortexVortexCorrelation_41.dat
+First in corrfile x 0.0
+MAximum value is 0.43007915567282323 at 378
+378
+378
+377
+376
+Left end is 376
+Right value is 380
+Width = 4
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9909132913346838 [0.98225832 1.05477809] 3 378 2.086340690430485e-05  -547.3725983 -547.315701 -547.2599406 -547.231467 -547.185166 -547.1119845
+46 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_32
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_32.dat
+positions.dat
+CheckGaussianArray.dat32
+result_32.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+evCorrelation_32.dat
+elecElecCorrelation_temp.dat
+vortexVortexCorrelation_32.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+1.0364279706655848 0.9968342320758842
+1.0283891940575973 (1.0364279706655848, 0.9968342320758842)
+ -511.2009175 -511.1542453 -511.1448922 -511.1212989 -511.1105001 -511.0719002
+evCorrelation_32.dat
+First in corrfile x 0.0
+MAximum value is 0.6171875 at 127
+127
+127
+126
+Left end is 126
+Right value is 135
+Width = 9
+vortexVortexCorrelation_32.dat
+First in corrfile x 0.0
+MAximum value is 0.45126353790613716 at 276
+276
+276
+275
+274
+273
+272
+Left end is 272
+Right value is 277
+Width = 5
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 1.0283891940575973 [1.03642797 0.99683423] 127 276 2.0870565288489095e-05  -511.2009175 -511.1542453 -511.1448922 -511.1212989 -511.1105001 -511.0719002
+47 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_30
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+CheckGaussianArray.dat30
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_30.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_30.dat
+evCorrelation_30.dat
+PotentialArray_30.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9823784321309526 1.028863099007026
+0.9918403720309235 (0.9823784321309526, 1.028863099007026)
+ -498.7061707 -498.7025898 -498.6863365 -498.5678134 -498.5576186 -498.5448627
+evCorrelation_30.dat
+First in corrfile x 0.0
+MAximum value is 1.1125 at 79
+79
+79
+78
+Left end is 78
+Right value is 81
+Width = 3
+vortexVortexCorrelation_30.dat
+First in corrfile x 0.0
+MAximum value is 6.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9918403720309235 [0.98237843 1.0288631 ] 79 0 2.1025572568692985e-05  -498.7061707 -498.7025898 -498.6863365 -498.5678134 -498.5576186 -498.5448627
+48 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_34
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+CheckGaussianArray.dat34
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_34.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_34.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_34.dat
+PotentialArray_34.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9750394021940161 0.991396834605702
+0.9788063525748443 (0.9750394021940161, 0.991396834605702)
+ -470.9738299 -470.9347577 -470.9094193 -470.8705426 -470.8495036 -470.7704282
+evCorrelation_34.dat
+First in corrfile x 0.0
+MAximum value is 0.39344262295081966 at 243
+243
+243
+242
+241
+240
+239
+Left end is 239
+Right value is 245
+Width = 6
+vortexVortexCorrelation_34.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9788063525748443 [0.9750394  0.99139683] 243 0 2.0796315503932196e-05  -470.9738299 -470.9347577 -470.9094193 -470.8705426 -470.8495036 -470.7704282
+49 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma001/dir_10
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_10.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+PotentialArray_10.dat
+elecElecCorrelation_temp.dat
+CheckGaussianArray.dat10
+evCorrelation_temp.dat
+result_10.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+vortexVortexCorrelation_10.dat
+Done reading
+10201
+101
+Corr size =40401
+0.9634594189110668 0.9460061777118653
+0.9571664169956339 (0.9634594189110668, 0.9460061777118653)
+ -568.9721012 -568.7465673 -568.5559907 -568.5184963 -568.415731 -568.3338808
+evCorrelation_10.dat
+First in corrfile x 0.0
+MAximum value is 0.3926940639269406 at 218
+218
+218
+217
+Left end is 217
+Right value is 224
+Width = 7
+vortexVortexCorrelation_10.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.01 -0.01 0.01 0.9571664169956339 [0.96345942 0.94600618] 218 0 2.029565873092629e-05  -568.9721012 -568.7465673 -568.5559907 -568.5184963 -568.415731 -568.3338808
+50 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_24
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+PotentialArray_24.dat
+spectrum.dat
+vortexVortexCorrelation_24.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_24.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat24
+evCorrelation_24.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.1674443131932115 5.702660434889273
+4.493284767729168 (4.1674443131932115, 5.702660434889273)
+ 3579.582707 3584.931125 3589.876478 3591.911469 3595.353916 3596.734067
+evCorrelation_24.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 5
+5
+5
+4
+Left end is 4
+Right value is 6
+Width = 2
+vortexVortexCorrelation_24.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.493284767729168 [4.16744431 5.70266043] 5 0 0.0020498934369119984  3579.582707 3584.931125 3589.876478 3591.911469 3595.353916 3596.734067
+1 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_44
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_44.dat
+PotentialArray_44.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_44.dat
+CheckGaussianArray.dat44
+result_44.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.3409853161652086 4.659544321446626
+5.169322790460513 (5.3409853161652086, 4.659544321446626)
+ 1508.224043 1509.425516 1518.033416 1520.64399 1521.004991 1522.702305
+evCorrelation_44.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+vortexVortexCorrelation_44.dat
+First in corrfile x 0.0
+MAximum value is 31.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.169322790460513 [5.34098532 4.65954432] 0 0 0.002040243207814448  1508.224043 1509.425516 1518.033416 1520.64399 1521.004991 1522.702305
+2 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_7
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_7.dat
+positions.dat
+evCorrelation_7.dat
+spectrum.dat
+CheckGaussianArray.dat7
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_7.dat
+result_7.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+6.8612086115144715 4.137301781338906
+5.617427430694962 (6.8612086115144715, 4.137301781338906)
+ -711.5508839 -708.9553081 -708.774784 -707.4709451 -707.1525768 -706.6876112
+evCorrelation_7.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 3
+3
+3
+2
+Left end is 2
+Right value is 5
+Width = 3
+vortexVortexCorrelation_7.dat
+First in corrfile x 0.0
+MAximum value is 38.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.617427430694962 [6.86120861 4.13730178] 3 0 0.0022120528705571146  -711.5508839 -708.9553081 -708.774784 -707.4709451 -707.1525768 -706.6876112
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+3 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_35
+evCorrelation2d.dat
+evalDensity_better.par
+result_35.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+PotentialArray_35.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+CheckGaussianArray.dat35
+evCorrelation_temp.dat
+bs5-15.dat
+vortexVortexCorrelation_35.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+evCorrelation_35.dat
+Done reading
+10201
+101
+Corr size =40401
+4.793802962841705 4.165309518936123
+4.461008261916671 (4.793802962841705, 4.165309518936123)
+ 157.6836885 158.4849123 159.1781763 159.3534213 159.6893969 160.2378071
+evCorrelation_35.dat
+First in corrfile x 0.0
+MAximum value is 0.4117647058823529 at 16
+16
+16
+15
+Left end is 15
+Right value is 17
+Width = 2
+vortexVortexCorrelation_35.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.461008261916671 [4.79380296 4.16530952] 16 0 0.0015980708516575425  157.6836885 158.4849123 159.1781763 159.3534213 159.6893969 160.2378071
+4 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_37
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+evCorrelation_37.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+vortexVortexCorrelation_37.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_37.dat
+CheckGaussianArray.dat37
+PotentialArray_37.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.159842121777026 3.964895473824352
+5.076075406416135 (5.159842121777026, 3.964895473824352)
+ -374.7210014 -374.268859 -371.8651597 -371.2871328 -371.1206391 -370.2759549
+evCorrelation_37.dat
+First in corrfile x 0.0
+MAximum value is 0.3152454780361757 at 386
+386
+386
+385
+384
+383
+Left end is 383
+Right value is 388
+Width = 5
+vortexVortexCorrelation_37.dat
+First in corrfile x 0.0
+MAximum value is 52.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.076075406416135 [5.15984212 3.96489547] 386 0 0.0017383400949123671  -374.7210014 -374.268859 -371.8651597 -371.2871328 -371.1206391 -370.2759549
+5 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_47
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_47.dat
+positions.dat
+vortexVortexCorrelation_47.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_47.dat
+CheckGaussianArray.dat47
+PotentialArray_47.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.057535648869747 5.3174663531569495
+4.184506535443948 (4.057535648869747, 5.3174663531569495)
+ 723.25862 727.5688423 728.0350172 729.1044073 729.5590622 730.904427
+evCorrelation_47.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 2
+2
+2
+1
+Left end is 1
+Right value is 3
+Width = 2
+vortexVortexCorrelation_47.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.184506535443948 [4.05753565 5.31746635] 2 0 0.0019521683956271745  723.25862 727.5688423 728.0350172 729.1044073 729.5590622 730.904427
+6 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_1
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+result_1.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+vortexVortexCorrelation_1.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat1
+evCorrelation_1.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_1.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.255203837948091 5.918200536841499
+4.604015555706347 (4.255203837948091, 5.918200536841499)
+ -3599.080926 -3596.243432 -3592.9611 -3590.826961 -3587.514168 -3585.495997
+evCorrelation_1.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+vortexVortexCorrelation_1.dat
+First in corrfile x 0.0
+MAximum value is 15.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.604015555706347 [4.25520384 5.91820054] 0 0 0.00181248342706003  -3599.080926 -3596.243432 -3592.9611 -3590.826961 -3587.514168 -3585.495997
+7 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_49
+evCorrelation2d.dat
+PotentialArray_49.dat
+evalDensity_better.par
+vortexVortexCorrelation_49.dat
+positions.dat
+evCorrelation_49.dat
+result_49.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat49
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.633247030989407 7.5896657422720635
+5.413623890212499 (5.633247030989407, 7.5896657422720635)
+ -872.3820689 -869.9043557 -867.5899928 -866.3484658 -866.2527696 -864.468904
+evCorrelation_49.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+vortexVortexCorrelation_49.dat
+First in corrfile x 0.0
+MAximum value is 65.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.413623890212499 [5.63324703 7.58966574] 0 0 0.00233635133279717  -872.3820689 -869.9043557 -867.5899928 -866.3484658 -866.2527696 -864.468904
+8 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_31
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+result_31.dat
+evCorrelation_temp.dat
+PotentialArray_31.dat
+CheckGaussianArray.dat31
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_31.dat
+evCorrelation_31.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.76132167493183 4.226407490678534
+4.866559407081824 (4.76132167493183, 4.226407490678534)
+ -2889.747349 -2884.808771 -2881.070396 -2880.538338 -2878.795106 -2877.038998
+evCorrelation_31.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 8
+8
+8
+7
+Left end is 7
+Right value is 9
+Width = 2
+vortexVortexCorrelation_31.dat
+First in corrfile x 0.0
+MAximum value is 21.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.866559407081824 [4.76132167 4.22640749] 8 0 0.001844664530608401  -2889.747349 -2884.808771 -2881.070396 -2880.538338 -2878.795106 -2877.038998
+9 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_15
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_15.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_15.dat
+CheckGaussianArray.dat15
+bs5-15.dat
+elecElecCorrelation.dat
+result_15.dat
+PotentialArray_15.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.874628747391953 5.3341837371326895
+4.856240689122702 (4.874628747391953, 5.3341837371326895)
+ 2898.74628 2904.827737 2909.301801 2913.778651 2914.935273 2916.432321
+evCorrelation_15.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 305
+305
+305
+304
+303
+Left end is 303
+Right value is 308
+Width = 5
+vortexVortexCorrelation_15.dat
+First in corrfile x 0.0
+MAximum value is 2.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.856240689122702 [4.87462875 5.33418374] 305 0 0.0018842246104947755  2898.74628 2904.827737 2909.301801 2913.778651 2914.935273 2916.432321
+10 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_17
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_17.dat
+positions.dat
+spectrum.dat
+evCorrelation_17.dat
+CheckGaussianArray.dat17
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_17.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_17.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.5276082052656275 8.863308068829667
+5.184965057819057 (5.5276082052656275, 8.863308068829667)
+ 1010.293952 1011.96787 1013.453985 1013.802406 1014.422553 1015.117501
+evCorrelation_17.dat
+First in corrfile x 0.0
+MAximum value is 0.5333333333333333 at 14
+14
+14
+13
+Left end is 13
+Right value is 15
+Width = 2
+vortexVortexCorrelation_17.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.184965057819057 [5.52760821 8.86330807] 14 0 0.0022948738448769156  1010.293952 1011.96787 1013.453985 1013.802406 1014.422553 1015.117501
+11 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_50
+evCorrelation2d.dat
+evalDensity_better.par
+CheckGaussianArray.dat50
+vortexVortexCorrelation_50.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+evCorrelation_50.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_50.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_50.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.2606323400158805 5.835081380292173
+5.1134644478869395 (4.2606323400158805, 5.835081380292173)
+ 835.9234197 847.7450797 848.756401 850.3364878 851.753169 855.5007457
+evCorrelation_50.dat
+First in corrfile x 0.0
+MAximum value is 0.75 at 3
+3
+3
+2
+Left end is 2
+Right value is 4
+Width = 2
+vortexVortexCorrelation_50.dat
+First in corrfile x 0.0
+MAximum value is 0.4387755102040816 at 195
+195
+195
+194
+193
+192
+191
+190
+189
+188
+187
+186
+Left end is 186
+Right value is 202
+Width = 16
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.1134644478869395 [4.26063234 5.83508138] 3 195 0.0017898521572267824  835.9234197 847.7450797 848.756401 850.3364878 851.753169 855.5007457
+12 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_9
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+vortexVortexCorrelation_9.dat
+spectrum.dat
+CheckGaussianArray.dat9
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_9.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_9.dat
+evCorrelation_9.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.152611016081416 5.00716887114568
+4.554212869156775 (4.152611016081416, 5.00716887114568)
+ 980.6447508 982.4845153 985.1553949 985.9932229 987.8575268 989.7643952
+evCorrelation_9.dat
+First in corrfile x 0.0
+MAximum value is 0.3739130434782609 at 229
+229
+229
+228
+227
+226
+225
+Left end is 225
+Right value is 230
+Width = 5
+vortexVortexCorrelation_9.dat
+First in corrfile x 0.0
+MAximum value is 0.5748502994011976 at 166
+166
+166
+165
+164
+163
+162
+161
+160
+159
+158
+Left end is 158
+Right value is 173
+Width = 15
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.554212869156775 [4.15261102 5.00716887] 229 166 0.0019132732615434994  980.6447508 982.4845153 985.1553949 985.9932229 987.8575268 989.7643952
+13 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_14
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+PotentialArray_14.dat
+spectrum.dat
+evCorrelation_14.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat14
+result_14.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_14.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.7539490404089255 5.567247086759833
+5.142630543700633 (4.7539490404089255, 5.567247086759833)
+ 1748.205228 1752.310181 1759.334452 1759.567739 1765.464254 1765.598217
+evCorrelation_14.dat
+First in corrfile x 0.0
+MAximum value is 0.6 at 4
+4
+4
+3
+Left end is 3
+Right value is 6
+Width = 3
+vortexVortexCorrelation_14.dat
+First in corrfile x 0.0
+MAximum value is 23.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.142630543700633 [4.75394904 5.56724709] 4 0 0.0020601048795494087  1748.205228 1752.310181 1759.334452 1759.567739 1765.464254 1765.598217
+14 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_48
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+vortexVortexCorrelation_48.dat
+spectrum.dat
+PotentialArray_48.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_48.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat48
+bs5-15.dat
+elecElecCorrelation.dat
+result_48.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.105301874241987 5.479233541962611
+4.363471627241994 (4.105301874241987, 5.479233541962611)
+ 6525.645723 6528.966018 6537.55583 6538.789811 6542.227088 6544.52978
+evCorrelation_48.dat
+First in corrfile x 0.0
+MAximum value is 0.34972677595628415 at 182
+182
+182
+181
+180
+Left end is 180
+Right value is 183
+Width = 3
+vortexVortexCorrelation_48.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.363471627241994 [4.10530187 5.47923354] 182 0 0.0016132927641222031  6525.645723 6528.966018 6537.55583 6538.789811 6542.227088 6544.52978
+15 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_25
+evCorrelation2d.dat
+evalDensity_better.par
+CheckGaussianArray.dat25
+positions.dat
+spectrum.dat
+result_25.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+evCorrelation_25.dat
+PotentialArray_25.dat
+vortexVortexCorrelation_25.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.947143727296576 6.331563403145233
+5.3152226234200945 (4.947143727296576, 6.331563403145233)
+ 3437.231333 3443.625556 3448.478413 3448.960977 3451.022797 3451.298908
+evCorrelation_25.dat
+First in corrfile x 0.0
+MAximum value is 0.3466135458167331 at 250
+250
+250
+249
+Left end is 249
+Right value is 251
+Width = 2
+vortexVortexCorrelation_25.dat
+First in corrfile x 0.0
+MAximum value is 0.45483870967741935 at 309
+309
+309
+308
+307
+306
+305
+304
+303
+302
+Left end is 302
+Right value is 318
+Width = 16
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.3152226234200945 [4.94714373 6.3315634 ] 250 309 0.002244413618237877  3437.231333 3443.625556 3448.478413 3448.960977 3451.022797 3451.298908
+16 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_39
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+PotentialArray_39.dat
+results
+random.dat
+matrix.dat
+evCorrelation_39.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_39.dat
+CheckGaussianArray.dat39
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_39.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.29528910358926 6.675725892873979
+6.45031485646591 (5.29528910358926, 6.675725892873979)
+ -5660.657652 -5656.823091 -5650.429199 -5646.094556 -5646.065023 -5642.072216
+evCorrelation_39.dat
+First in corrfile x 0.0
+MAximum value is 0.4 at 9
+9
+9
+8
+Left end is 8
+Right value is 10
+Width = 2
+vortexVortexCorrelation_39.dat
+First in corrfile x 0.0
+MAximum value is 0.4639175257731959 at 193
+193
+193
+192
+191
+190
+189
+188
+187
+186
+185
+184
+183
+182
+Left end is 182
+Right value is 195
+Width = 13
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 6.45031485646591 [5.2952891  6.67572589] 9 193 0.0024421133065959354  -5660.657652 -5656.823091 -5650.429199 -5646.094556 -5646.065023 -5642.072216
+17 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_43
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_43.dat
+positions.dat
+evCorrelation_43.dat
+spectrum.dat
+results
+CheckGaussianArray.dat43
+random.dat
+matrix.dat
+result_43.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_43.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.017181885691872 4.8617793412555255
+4.136100304402714 (4.017181885691872, 4.8617793412555255)
+ 1247.198076 1249.551867 1250.653379 1251.554939 1252.512739 1252.839474
+evCorrelation_43.dat
+First in corrfile x 0.0
+MAximum value is 0.375 at 15
+15
+15
+14
+Left end is 14
+Right value is 16
+Width = 2
+vortexVortexCorrelation_43.dat
+First in corrfile x 0.0
+MAximum value is 2.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.136100304402714 [4.01718189 4.86177934] 15 0 0.0015517304436464096  1247.198076 1249.551867 1250.653379 1251.554939 1252.512739 1252.839474
+18 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_33
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+result_33.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_33.dat
+evCorrelation_33.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_33.dat
+CheckGaussianArray.dat33
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+3.9456342969085605 5.878899860223719
+4.158845209056449 (3.9456342969085605, 5.878899860223719)
+ -4550.434423 -4546.93779 -4543.202394 -4540.725584 -4538.218101 -4536.998459
+evCorrelation_33.dat
+First in corrfile x 0.0
+MAximum value is 0.35833333333333334 at 239
+239
+239
+238
+Left end is 238
+Right value is 240
+Width = 2
+vortexVortexCorrelation_33.dat
+First in corrfile x 0.0
+MAximum value is 0.5586206896551724 at 144
+144
+144
+143
+Left end is 143
+Right value is 145
+Width = 2
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.158845209056449 [3.9456343  5.87889986] 239 144 0.0020523490791962825  -4550.434423 -4546.93779 -4543.202394 -4540.725584 -4538.218101 -4536.998459
+19 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_20
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+vortexVortexCorrelation_20.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+result_20.dat
+evCorrelation_temp.dat
+evCorrelation_20.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_20.dat
+CheckGaussianArray.dat20
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.284421291828142 5.019706462985402
+5.043365481454824 (4.284421291828142, 5.019706462985402)
+ -3617.662061 -3612.969802 -3611.45847 -3609.718327 -3608.368456 -3606.809685
+evCorrelation_20.dat
+First in corrfile x 0.0
+MAximum value is 0.3355048859934853 at 306
+306
+306
+305
+Left end is 305
+Right value is 307
+Width = 2
+vortexVortexCorrelation_20.dat
+First in corrfile x 0.0
+MAximum value is 4.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.043365481454824 [4.28442129 5.01970646] 306 0 0.001823108626942962  -3617.662061 -3612.969802 -3611.45847 -3609.718327 -3608.368456 -3606.809685
+20 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_11
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_11.dat
+positions.dat
+result_11.dat
+spectrum.dat
+vortexVortexCorrelation_11.dat
+evCorrelation_11.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat11
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.9458950682354486 22.325503235997054
+5.237030296330535 (5.9458950682354486, 22.325503235997054)
+ 6003.454764 6015.797484 6019.594908 6021.99208 6025.893057 6026.329154
+evCorrelation_11.dat
+First in corrfile x 0.0
+MAximum value is 0.3422818791946309 at 297
+297
+297
+296
+Left end is 296
+Right value is 302
+Width = 6
+vortexVortexCorrelation_11.dat
+First in corrfile x 0.0
+MAximum value is 0.6116071428571429 at 223
+223
+223
+222
+Left end is 222
+Right value is 225
+Width = 3
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.237030296330535 [ 5.94589507 22.32550324] 297 223 0.0016603999480357505  6003.454764 6015.797484 6019.594908 6021.99208 6025.893057 6026.329154
+21 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_42
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_42.dat
+positions.dat
+result_42.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+PotentialArray_42.dat
+evCorrelation_temp.dat
+evCorrelation_42.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat42
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+3.965653496787169 4.638507897008538
+4.126909296557766 (3.965653496787169, 4.638507897008538)
+ 865.524876 867.9890306 870.615723 872.4355446 874.6796809 874.9746277
+evCorrelation_42.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 239
+239
+239
+238
+Left end is 238
+Right value is 240
+Width = 2
+vortexVortexCorrelation_42.dat
+First in corrfile x 0.0
+MAximum value is 2.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.126909296557766 [3.9656535 4.6385079] 239 0 0.0017390099147599604  865.524876 867.9890306 870.615723 872.4355446 874.6796809 874.9746277
+22 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_22
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_22.dat
+positions.dat
+vortexVortexCorrelation_22.dat
+spectrum.dat
+result_22.dat
+CheckGaussianArray.dat22
+results
+random.dat
+matrix.dat
+PotentialArray_22.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.015867034389783 11.88507950097995
+7.50011516890439 (5.015867034389783, 11.88507950097995)
+ -403.5509036 -403.2515221 -402.2009359 -402.0723605 -401.5887453 -401.3439026
+evCorrelation_22.dat
+First in corrfile x 0.0
+MAximum value is 0.36363636363636365 at 10
+10
+10
+9
+Left end is 9
+Right value is 11
+Width = 2
+vortexVortexCorrelation_22.dat
+First in corrfile x 0.0
+MAximum value is 80.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 7.50011516890439 [ 5.01586703 11.8850795 ] 10 0 0.0019307660717639103  -403.5509036 -403.2515221 -402.2009359 -402.0723605 -401.5887453 -401.3439026
+23 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_2
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_2.dat
+positions.dat
+spectrum.dat
+vortexVortexCorrelation_2.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+PotentialArray_2.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_2.dat
+CheckGaussianArray.dat2
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.371000209818937 4.317441565375099
+5.4140871113606615 (5.371000209818937, 4.317441565375099)
+ -1982.409038 -1981.198541 -1980.439468 -1977.608372 -1976.847882 -1975.892191
+evCorrelation_2.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 3
+3
+3
+2
+Left end is 2
+Right value is 4
+Width = 2
+vortexVortexCorrelation_2.dat
+First in corrfile x 0.0
+MAximum value is 0.4685714285714286 at 174
+174
+174
+173
+172
+Left end is 172
+Right value is 179
+Width = 7
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.4140871113606615 [5.37100021 4.31744157] 3 174 0.0022593431813349467  -1982.409038 -1981.198541 -1980.439468 -1977.608372 -1976.847882 -1975.892191
+24 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_8
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_8.dat
+evCorrelation_8.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+CheckGaussianArray.dat8
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_8.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_8.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+7.464412334409884 4.586936703187122
+5.775584898746866 (7.464412334409884, 4.586936703187122)
+ 222.0206567 225.0248282 225.9220974 226.1291426 226.8476806 228.3266607
+evCorrelation_8.dat
+First in corrfile x 0.0
+MAximum value is 0.33433734939759036 at 331
+331
+331
+330
+329
+Left end is 329
+Right value is 332
+Width = 3
+vortexVortexCorrelation_8.dat
+First in corrfile x 0.0
+MAximum value is 4.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.775584898746866 [7.46441233 4.5869367 ] 331 0 0.0018602470194501286  222.0206567 225.0248282 225.9220974 226.1291426 226.8476806 228.3266607
+25 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_12
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+vortexVortexCorrelation_12.dat
+result_12.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_12.dat
+evCorrelation_12.dat
+CheckGaussianArray.dat12
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.044216323111237 4.773273570719953
+4.988615578776651 (4.044216323111237, 4.773273570719953)
+ 1714.663369 1716.608847 1718.799625 1721.085466 1721.881562 1723.331509
+evCorrelation_12.dat
+First in corrfile x 0.0
+MAximum value is 0.3386454183266932 at 250
+250
+250
+249
+248
+247
+246
+Left end is 246
+Right value is 252
+Width = 6
+vortexVortexCorrelation_12.dat
+First in corrfile x 0.0
+MAximum value is 0.5205479452054794 at 145
+145
+145
+144
+143
+142
+141
+140
+139
+Left end is 139
+Right value is 147
+Width = 8
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.988615578776651 [4.04421632 4.77327357] 250 145 0.0018929808903605384  1714.663369 1716.608847 1718.799625 1721.085466 1721.881562 1723.331509
+26 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_3
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_3.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_3.dat
+vortexVortexCorrelation_3.dat
+CheckGaussianArray.dat3
+evCorrelation_3.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.002597264744 5.21773187525659
+4.224164182090309 (4.002597264744, 5.21773187525659)
+ -2568.794282 -2564.758195 -2561.401259 -2558.964151 -2558.028093 -2556.335151
+evCorrelation_3.dat
+First in corrfile x 0.0
+MAximum value is 0.4 at 4
+4
+4
+3
+Left end is 3
+Right value is 6
+Width = 3
+vortexVortexCorrelation_3.dat
+First in corrfile x 0.0
+MAximum value is 8.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.224164182090309 [4.00259726 5.21773188] 4 0 0.0015698944998770775  -2568.794282 -2564.758195 -2561.401259 -2558.964151 -2558.028093 -2556.335151
+27 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_6
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+result_6.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_6.dat
+CheckGaussianArray.dat6
+bs5-15.dat
+elecElecCorrelation.dat
+evCorrelation_6.dat
+vortexVortexCorrelation_6.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+6.724621791585027 5.560596892909921
+5.490324785642904 (6.724621791585027, 5.560596892909921)
+ 5520.433878 5523.831194 5526.352265 5533.271092 5544.478205 5546.660266
+evCorrelation_6.dat
+First in corrfile x 0.0
+MAximum value is 0.42857142857142855 at 6
+6
+6
+5
+4
+Left end is 4
+Right value is 7
+Width = 3
+vortexVortexCorrelation_6.dat
+First in corrfile x 0.0
+MAximum value is 3.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.490324785642904 [6.72462179 5.56059689] 6 0 0.0020988891243783506  5520.433878 5523.831194 5526.352265 5533.271092 5544.478205 5546.660266
+28 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_27
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_27.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat27
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_27.dat
+result_27.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+evCorrelation_27.dat
+Done reading
+10201
+101
+Corr size =40401
+6.0968775200103895 5.175888727429998
+5.7692365129907115 (6.0968775200103895, 5.175888727429998)
+ 788.3755569 790.503089 793.7623158 793.9494997 794.6247062 796.4625093
+evCorrelation_27.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 1
+1
+1
+Left end is 1
+Right value is 2
+Width = 1
+vortexVortexCorrelation_27.dat
+First in corrfile x 0.0
+MAximum value is 52.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.7692365129907115 [6.09687752 5.17588873] 1 0 0.002186015510681745  788.3755569 790.503089 793.7623158 793.9494997 794.6247062 796.4625093
+29 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_38
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_38.dat
+positions.dat
+result_38.dat
+spectrum.dat
+results
+random.dat
+evCorrelation_38.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_38.dat
+CheckGaussianArray.dat38
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.001450253810572 4.292993027439416
+4.85607839618229 (5.001450253810572, 4.292993027439416)
+ -394.5220571 -394.4344089 -393.2703277 -392.0723197 -390.513297 -389.4166544
+evCorrelation_38.dat
+First in corrfile x 0.0
+MAximum value is 0.3417085427135678 at 397
+397
+397
+396
+Left end is 396
+vortexVortexCorrelation_38.dat
+First in corrfile x 0.0
+MAximum value is 66.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.85607839618229 [5.00145025 4.29299303] U 0 0.00192394945883296  -394.5220571 -394.4344089 -393.2703277 -392.0723197 -390.513297 -389.4166544
+30 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_4
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+result_4.dat
+CheckGaussianArray.dat4
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_4.dat
+PotentialArray_4.dat
+evCorrelation_4.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.359430327671893 4.8190809355989
+4.455753364976606 (4.359430327671893, 4.8190809355989)
+ 5500.844641 5507.825325 5513.682152 5516.812744 5520.235751 5526.07822
+evCorrelation_4.dat
+First in corrfile x 0.0
+MAximum value is 0.42857142857142855 at 6
+6
+6
+5
+Left end is 5
+Right value is 7
+Width = 2
+vortexVortexCorrelation_4.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.455753364976606 [4.35943033 4.81908094] 6 0 0.0018418167925277136  5500.844641 5507.825325 5513.682152 5516.812744 5520.235751 5526.07822
+31 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_13
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+CheckGaussianArray.dat13
+PotentialArray_13.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+evCorrelation_13.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_13.dat
+gaussian.par
+result_13.dat
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.2550183324870865 6.176099355285084
+5.594153118820052 (5.2550183324870865, 6.176099355285084)
+ -130.8137 -129.4537805 -128.8903603 -126.6565009 -125.9230419 -124.269734
+evCorrelation_13.dat
+First in corrfile x 0.0
+MAximum value is 0.4 at 4
+4
+4
+3
+Left end is 3
+Right value is 5
+Width = 2
+vortexVortexCorrelation_13.dat
+First in corrfile x 0.0
+MAximum value is 1.0466666666666666 at 149
+149
+149
+148
+147
+146
+145
+144
+143
+142
+141
+Left end is 141
+Right value is 154
+Width = 13
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.594153118820052 [5.25501833 6.17609936] 4 149 0.0020894283590487295  -130.8137 -129.4537805 -128.8903603 -126.6565009 -125.9230419 -124.269734
+32 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_18
+evCorrelation2d.dat
+evalDensity_better.par
+result_18.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+PotentialArray_18.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat18
+vortexVortexCorrelation_18.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+evCorrelation_18.dat
+Done reading
+10201
+101
+Corr size =40401
+4.310294306632398 4.906485186160142
+4.386603418437571 (4.310294306632398, 4.906485186160142)
+ -2012.418002 -2008.511099 -2007.09026 -2005.091299 -2003.13356 -2001.595025
+evCorrelation_18.dat
+First in corrfile x 0.0
+MAximum value is 0.3323529411764706 at 339
+339
+339
+338
+337
+336
+335
+334
+333
+332
+Left end is 332
+Right value is 341
+Width = 9
+vortexVortexCorrelation_18.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.386603418437571 [4.31029431 4.90648519] 339 0 0.0018437554275737658  -2012.418002 -2008.511099 -2007.09026 -2005.091299 -2003.13356 -2001.595025
+33 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_23
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+CheckGaussianArray.dat23
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+PotentialArray_23.dat
+evCorrelation_temp.dat
+result_23.dat
+evCorrelation_23.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_23.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+6.488344310584474 4.892218322706043
+4.915911374597444 (6.488344310584474, 4.892218322706043)
+ -2688.92664 -2685.969741 -2682.626626 -2680.577799 -2677.408578 -2677.133806
+evCorrelation_23.dat
+First in corrfile x 0.0
+MAximum value is 0.35333333333333333 at 299
+299
+299
+298
+Left end is 298
+Right value is 302
+Width = 4
+vortexVortexCorrelation_23.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.915911374597444 [6.48834431 4.89221832] 299 0 0.002121526453942009  -2688.92664 -2685.969741 -2682.626626 -2680.577799 -2677.408578 -2677.133806
+34 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_46
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+CheckGaussianArray.dat46
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_46.dat
+bs5-15.dat
+elecElecCorrelation.dat
+evCorrelation_46.dat
+result_46.dat
+PotentialArray_46.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.410178137473379 5.271244856982016
+5.400923940609246 (5.410178137473379, 5.271244856982016)
+ -2546.047756 -2544.788622 -2541.622402 -2540.392773 -2537.56481 -2537.166688
+evCorrelation_46.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 1
+1
+1
+Left end is 1
+Right value is 2
+Width = 1
+vortexVortexCorrelation_46.dat
+First in corrfile x 0.0
+MAximum value is 0.5214723926380368 at 162
+162
+162
+161
+160
+Left end is 160
+Right value is 164
+Width = 4
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.400923940609246 [5.41017814 5.27124486] 1 162 0.00209147100173042  -2546.047756 -2544.788622 -2541.622402 -2540.392773 -2537.56481 -2537.166688
+35 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_45
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+evCorrelation_45.dat
+spectrum.dat
+result_45.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat45
+vortexVortexCorrelation_45.dat
+bs5-15.dat
+elecElecCorrelation.dat
+PotentialArray_45.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.8566188437966495 4.525922829471315
+5.646178771898089 (5.8566188437966495, 4.525922829471315)
+ 1356.335883 1360.53389 1363.059864 1364.21725 1365.917391 1365.947202
+evCorrelation_45.dat
+First in corrfile x 0.0
+MAximum value is 0.6666666666666666 at 2
+2
+2
+1
+Left end is 1
+Right value is 3
+Width = 2
+vortexVortexCorrelation_45.dat
+First in corrfile x 0.0
+MAximum value is 4.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.646178771898089 [5.85661884 4.52592283] 2 0 0.0018706645779465792  1356.335883 1360.53389 1363.059864 1364.21725 1365.917391 1365.947202
+36 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_29
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_29.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+evCorrelation_29.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat29
+result_29.dat
+PotentialArray_29.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.412894370107982 4.298398871280817
+5.0673134424053075 (5.412894370107982, 4.298398871280817)
+ 4381.870111 4388.989329 4392.42846 4397.664648 4398.87205 4402.323074
+evCorrelation_29.dat
+First in corrfile x 0.0
+MAximum value is 0.42857142857142855 at 6
+6
+6
+5
+Left end is 5
+Right value is 7
+Width = 2
+vortexVortexCorrelation_29.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 5.0673134424053075 [5.41289437 4.29839887] 6 0 0.0016575767816381969  4381.870111 4388.989329 4392.42846 4397.664648 4398.87205 4402.323074
+37 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_19
+evCorrelation2d.dat
+evalDensity_better.par
+result_19.dat
+CheckGaussianArray.dat19
+positions.dat
+spectrum.dat
+vortexVortexCorrelation_19.dat
+results
+random.dat
+matrix.dat
+evCorrelation_19.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_19.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+5.31056644405027 4.666303562858867
+4.924062351153126 (5.31056644405027, 4.666303562858867)
+ -3790.70194 -3786.844277 -3784.27614 -3783.093884 -3780.651759 -3780.57078
+evCorrelation_19.dat
+First in corrfile x 0.0
+MAximum value is 0.36363636363636365 at 10
+10
+10
+9
+Left end is 9
+Right value is 11
+Width = 2
+vortexVortexCorrelation_19.dat
+First in corrfile x 0.0
+MAximum value is 11.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.924062351153126 [5.31056644 4.66630356] 10 0 0.0017721888694526718  -3790.70194 -3786.844277 -3784.27614 -3783.093884 -3780.651759 -3780.57078
+38 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_21
+evCorrelation2d.dat
+vortexVortexCorrelation_21.dat
+result_21.dat
+evalDensity_better.par
+PotentialArray_21.dat
+positions.dat
+evCorrelation_21.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+CheckGaussianArray.dat21
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+6.150891282257772 4.746190943433161
+6.164575240895742 (6.150891282257772, 4.746190943433161)
+ -5699.84225 -5691.271378 -5685.822846 -5684.439429 -5679.163007 -5674.924535
+evCorrelation_21.dat
+First in corrfile x 0.0
+MAximum value is 0.36 at 199
+199
+199
+198
+197
+196
+195
+194
+Left end is 194
+Right value is 201
+Width = 7
+vortexVortexCorrelation_21.dat
+First in corrfile x 0.0
+MAximum value is 0.4576271186440678 at 117
+117
+117
+116
+Left end is 116
+Right value is 118
+Width = 2
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 6.164575240895742 [6.15089128 4.74619094] 199 117 0.0021579682740057397  -5699.84225 -5691.271378 -5685.822846 -5684.439429 -5679.163007 -5674.924535
+39 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_26
+evCorrelation2d.dat
+evalDensity_better.par
+vortexVortexCorrelation_26.dat
+positions.dat
+CheckGaussianArray.dat26
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_26.dat
+evCorrelation_26.dat
+PotentialArray_26.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+3.8379238090889167 5.325058534767871
+4.082738540254105 (3.8379238090889167, 5.325058534767871)
+ 1166.206685 1169.178417 1172.979823 1173.745901 1174.99804 1175.89496
+evCorrelation_26.dat
+First in corrfile x 0.0
+MAximum value is 0.3333333333333333 at 2
+2
+2
+1
+Left end is 1
+Right value is 3
+Width = 2
+vortexVortexCorrelation_26.dat
+First in corrfile x 0.0
+MAximum value is 13.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.082738540254105 [3.83792381 5.32505853] 2 0 0.0017891952676173178  1166.206685 1169.178417 1172.979823 1173.745901 1174.99804 1175.89496
+40 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_28
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+PotentialArray_28.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+evCorrelation_28.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_28.dat
+CheckGaussianArray.dat28
+result_28.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.061810612389922 4.946230167207809
+4.143725676464542 (4.061810612389922, 4.946230167207809)
+ -2789.166062 -2784.477941 -2783.641326 -2780.923289 -2778.399883 -2777.552885
+evCorrelation_28.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+vortexVortexCorrelation_28.dat
+First in corrfile x 0.0
+MAximum value is 0.6015037593984962 at 132
+132
+132
+131
+130
+129
+128
+127
+126
+Left end is 126
+Right value is 138
+Width = 12
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.143725676464542 [4.06181061 4.94623017] 0 132 0.0016471839201308949  -2789.166062 -2784.477941 -2783.641326 -2780.923289 -2778.399883 -2777.552885
+41 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_36
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_36.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_36.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat36
+PotentialArray_36.dat
+result_36.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.85786818289749 4.723773382130841
+4.761701307141955 (4.85786818289749, 4.723773382130841)
+ 1319.793644 1322.999699 1323.568198 1325.255727 1325.839267 1326.662441
+evCorrelation_36.dat
+First in corrfile x 0.0
+MAximum value is 0.4 at 4
+4
+4
+3
+Left end is 3
+Right value is 5
+Width = 2
+vortexVortexCorrelation_36.dat
+First in corrfile x 0.0
+MAximum value is 2.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.761701307141955 [4.85786818 4.72377338] 4 0 0.0018511333914016344  1319.793644 1322.999699 1323.568198 1325.255727 1325.839267 1326.662441
+42 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_16
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+PotentialArray_16.dat
+bs5-15.dat
+elecElecCorrelation.dat
+CheckGaussianArray.dat16
+result_16.dat
+vortexVortexCorrelation_16.dat
+evCorrelation_16.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+6.576681531239451 4.378519397315142
+4.976269952963397 (6.576681531239451, 4.378519397315142)
+ -3460.400195 -3459.702318 -3455.860517 -3454.012506 -3452.72493 -3452.371763
+evCorrelation_16.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 1
+1
+1
+Left end is 1
+Right value is 2
+Width = 1
+vortexVortexCorrelation_16.dat
+First in corrfile x 0.0
+MAximum value is 0.5071428571428571 at 139
+139
+139
+138
+137
+136
+135
+134
+Left end is 134
+Right value is 142
+Width = 8
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.976269952963397 [6.57668153 4.3785194 ] 1 139 0.0023747544178860714  -3460.400195 -3459.702318 -3455.860517 -3454.012506 -3452.72493 -3452.371763
+43 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_5
+evCorrelation2d.dat
+evalDensity_better.par
+result_5.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_5.dat
+PotentialArray_5.dat
+evCorrelation_5.dat
+CheckGaussianArray.dat5
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+3.9400056797975385 4.821779690561907
+4.7990814765583085 (3.9400056797975385, 4.821779690561907)
+ 1508.83045 1513.48923 1517.505581 1519.497996 1521.344749 1522.275499
+evCorrelation_5.dat
+First in corrfile x 0.0
+MAximum value is 0.39748953974895396 at 238
+238
+238
+237
+236
+Left end is 236
+Right value is 239
+Width = 3
+vortexVortexCorrelation_5.dat
+First in corrfile x 0.0
+MAximum value is 0.4368932038834951 at 102
+102
+102
+101
+100
+Left end is 100
+Right value is 104
+Width = 4
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.7990814765583085 [3.94000568 4.82177969] 238 102 0.0020402713021115742  1508.83045 1513.48923 1517.505581 1519.497996 1521.344749 1522.275499
+44 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_40
+evCorrelation2d.dat
+evalDensity_better.par
+result_40.dat
+PotentialArray_40.dat
+positions.dat
+spectrum.dat
+CheckGaussianArray.dat40
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_40.dat
+evCorrelation_40.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.266504462512187 4.007360417901826
+4.143400149995241 (4.266504462512187, 4.007360417901826)
+ -2541.264615 -2539.960513 -2536.779151 -2536.574172 -2535.30811 -2534.576523
+evCorrelation_40.dat
+First in corrfile x 0.0
+MAximum value is 0.34210526315789475 at 227
+227
+227
+226
+225
+224
+223
+Left end is 223
+Right value is 228
+Width = 5
+vortexVortexCorrelation_40.dat
+First in corrfile x 0.0
+MAximum value is 0.5511811023622047 at 253
+253
+253
+252
+251
+250
+249
+248
+247
+246
+245
+244
+243
+242
+241
+Left end is 241
+Right value is 257
+Width = 16
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.143400149995241 [4.26650446 4.00736042] 227 253 0.0015730504578547254  -2541.264615 -2539.960513 -2536.779151 -2536.574172 -2535.30811 -2534.576523
+45 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_41
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+vortexVortexCorrelation_41.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+evCorrelation_41.dat
+CheckGaussianArray.dat41
+result_41.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+PotentialArray_41.dat
+Done reading
+10201
+101
+Corr size =40401
+3.735585392249268 4.792642880257706
+4.626143986137261 (3.735585392249268, 4.792642880257706)
+ -3332.607197 -3330.43666 -3326.058289 -3324.724135 -3321.109315 -3320.471619
+evCorrelation_41.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+vortexVortexCorrelation_41.dat
+First in corrfile x 0.0
+MAximum value is 11.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.626143986137261 [3.73558539 4.79264288] 0 0 0.001895189933065471  -3332.607197 -3330.43666 -3326.058289 -3324.724135 -3321.109315 -3320.471619
+46 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_32
+evCorrelation2d.dat
+evalDensity_better.par
+PotentialArray_32.dat
+positions.dat
+CheckGaussianArray.dat32
+result_32.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+evCorrelation_32.dat
+elecElecCorrelation_temp.dat
+vortexVortexCorrelation_32.dat
+evCorrelation_temp.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.4875468921123 6.622256287772482
+5.018800815319549 (4.4875468921123, 6.622256287772482)
+ 5718.529715 5730.476258 5736.565175 5742.312507 5744.695453 5748.486822
+evCorrelation_32.dat
+First in corrfile x 0.0
+MAximum value is 0.375 at 7
+7
+7
+6
+Left end is 6
+Right value is 8
+Width = 2
+vortexVortexCorrelation_32.dat
+First in corrfile x 0.0
+MAximum value is 7.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 5.018800815319549 [4.48754689 6.62225629] 7 0 0.0018572868145947522  5718.529715 5730.476258 5736.565175 5742.312507 5744.695453 5748.486822
+47 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_30
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+CheckGaussianArray.dat30
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_temp.dat
+result_30.dat
+bs5-15.dat
+elecElecCorrelation.dat
+vortexVortexCorrelation_30.dat
+evCorrelation_30.dat
+PotentialArray_30.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.544999177250314 3.9946759325169796
+4.61593452343739 (4.544999177250314, 3.9946759325169796)
+ 1857.384554 1860.73887 1863.823297 1866.558385 1869.268449 1871.241882
+evCorrelation_30.dat
+First in corrfile x 0.0
+MAximum value is 0.34055727554179566 at 322
+322
+322
+321
+Left end is 321
+Right value is 323
+Width = 2
+vortexVortexCorrelation_30.dat
+First in corrfile x 0.0
+MAximum value is 1.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.61593452343739 [4.54499918 3.99467593] 322 0 0.001954924416127134  1857.384554 1860.73887 1863.823297 1866.558385 1869.268449 1871.241882
+48 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_34
+evCorrelation2d.dat
+evalDensity_better.par
+positions.dat
+CheckGaussianArray.dat34
+spectrum.dat
+results
+random.dat
+matrix.dat
+elecElecCorrelation_temp.dat
+evCorrelation_34.dat
+evCorrelation_temp.dat
+vortexVortexCorrelation_34.dat
+bs5-15.dat
+elecElecCorrelation.dat
+result_34.dat
+PotentialArray_34.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+Done reading
+10201
+101
+Corr size =40401
+4.624784210193616 5.732376143898502
+4.661400110249581 (4.624784210193616, 5.732376143898502)
+ -1203.559356 -1202.734095 -1202.548678 -1202.117108 -1201.93841 -1201.442987
+evCorrelation_34.dat
+First in corrfile x 0.0
+MAximum value is 0.3185840707964602 at 338
+338
+338
+337
+336
+Left end is 336
+Right value is 342
+Width = 6
+vortexVortexCorrelation_34.dat
+First in corrfile x 0.0
+MAximum value is 9.0 at 0
+0
+Left end is 0
+Right value is 0
+Width = 0
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+5 15 HC 4000.0 0.02 -0.02 0.05 4.661400110249581 [4.62478421 5.73237614] 338 0 0.0016730441593124732  -1203.559356 -1202.734095 -1202.548678 -1202.117108 -1201.93841 -1201.442987
+49 50
+/home/chris/cluster/clusterResults2/5-15/vosigma1e03/sigma0_05/dir_10
+evCorrelation2d.dat
+evalDensity_better.par
+evCorrelation_10.dat
+positions.dat
+spectrum.dat
+results
+random.dat
+matrix.dat
+PotentialArray_10.dat
+elecElecCorrelation_temp.dat
+CheckGaussianArray.dat10
+evCorrelation_temp.dat
+result_10.dat
+bs5-15.dat
+elecElecCorrelation.dat
+gaussian.par
+vortexVortexCorrelation_temp.dat
+vortexVortexCorrelation_10.dat
+Done reading
+10201
+101
+Corr size =40401
+4.948804874559438 5.770947079382896
+4.896688401234105 (4.948804874559438, 5.770947079382896)
+ 2320.198722 2324.762976 2327.825086 2334.559617 2335.491686 2336.858817
+evCorrelation_10.dat
+First in corrfile x 0.0
+MAximum value is 0.5 at 1
+1
+1
+Left end is 1
+Right value is 2
+Width = 1
+vortexVortexCorrelation_10.dat
+First in corrfile x 0.0
+MAximum value is 0.5381165919282511 at 222
+222
+222
+221
+220
+219
+218
+217
+216
+Left end is 216
+Right value is 225
+Width = 9
+1               # type of e-e interaction: 0 -> Coulomb, 1 -> hardcore
+/home/chris/eclipse-workspace/tkiterTrial/cli/Gaussian.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='gaussian.par' mode='r' encoding='UTF-8'>
+  lineList = [line.rstrip('\n') for line in open(fileName)]
+5 15 HC 4000.0 0.02 -0.02 0.05 4.896688401234105 [4.94880487 5.77094708] 1 222 0.0021127391509661608  2320.198722 2324.762976 2327.825086 2334.559617 2335.491686 2336.858817
+50 50
+/usr/lib/python3.5/unittest/case.py:600: ResourceWarning: unclosed file <_io.TextIOWrapper name='testResults_5-15.dat' mode='w+' encoding='UTF-8'>
+  testMethod()
+.
+----------------------------------------------------------------------
+Ran 1 test in 10702.709s
+
+OK
+

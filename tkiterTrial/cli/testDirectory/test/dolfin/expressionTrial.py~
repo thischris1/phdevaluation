@@ -1,0 +1,12 @@
+from dolfin import *
+from fenics import *
+import matplotlib.pyplot as plt
+class MyExpression0(Expression):
+    def eval(self, value, x):
+        dx = x[0] - 0.5
+        dy = x[1] - 0.5
+        value[0] = 500.0*exp(-(dx*dx + dy*dy)/0.02)
+        value[1] = 250.0*exp(-(dx*dx + dy*dy)/0.01)
+    def value_shape(self):
+        return (2,)
+f0 = MyExpression0()

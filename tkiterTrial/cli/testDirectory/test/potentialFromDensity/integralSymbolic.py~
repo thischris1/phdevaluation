@@ -1,0 +1,4 @@
+from sympy import *
+
+x,y = symbols('x y')
+integrate(cos(x+y),x,y)

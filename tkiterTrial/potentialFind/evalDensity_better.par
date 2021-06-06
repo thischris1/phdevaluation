@@ -1,0 +1,29 @@
+./bs6-18.dat# basisFilename (in)
+./state_6_18_hcmultiple0# vectorFilename (in)
+6-18Hmultiple_4800.dat0# densityFilename (out)
+6-18Hmultiple_4800.dat# diagonal of landau-matrix (out)
+1		# which vector to investigate
+1		# wether to use complex eigenvectors
+1		# type of file to read 0-> normal c-code 2->fortran unformatted
+1		# aspect ratio a/b
+0		# flux in solenoid1 affecting x-momentum in units of h/e
+0		# flux in solenoid2 affecting y-momentum in units of h/e
+GRID
+100 		# nrXStep
+100 		# nrYStep
+3 		# nr. of colums to evaluate
+1 		# what to put into (see notes): 3rd column (density)
+8 		# current density in x-direction
+9 		# current density in y-direction
+
+Notes:
+- 'what to put into': 1st and 2nd column are the x and y coords.
+what comes into 3rd, 4th, ... column can be directed by the following codes
+ 0	constant (everytime = 1.00)
+		1	particle density
+		2	spin density
+		3	spin-down density
+		4	Sz density
+		5	spin density/particle density
+		6	spin-down density/particle density
+		7	Sz density/particle density
