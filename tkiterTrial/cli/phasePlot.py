@@ -16,6 +16,7 @@ from pylab import *
 from scipy.optimize import curve_fit
 from array import array
 from random import randrange
+from docutils.languages import da
 
 # from cli.clusterEvaluation import allData
 
@@ -800,14 +801,28 @@ def plot_rev_over_bandwith(data, Ne, ia):
     unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
     # Filter data were rev < 2, print bandwidth
     smallrevArray = HCArray[np.where(HCArray[:,evMaxIndex] < 2)]
-    print (smallrevArray[0,:])
-    print ("Selected values, evMax, vvMax, lcorr, 2 states")
-    print (smallrevArray[:,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
-    print ("---------------------------------------------------")
-    print (smallrevArray[0,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
+    number_of_rows = smallrevArray.shape[0]
+    random_indices = np.random.choice(number_of_rows, size=5, replace=False)
+     
+    printDataReadable(smallrevArray[random_indices,:])
+    #print (smallrevArray[0,:])
+    #print ("Selected values, evMax, vvMax, lcorr, 2 states")
+    #print (smallrevArray[:,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
+    #print ("---------------------------------------------------")
+    #print (smallrevArray[0,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
     #print(smallrevArray[:,evMaxIndex])
     print ("End of small rev")
+    largerevArray = HCArray[np.where(HCArray[:,evMaxIndex]> 100)]
+    number_of_rows = largerevArray.shape[0]
+    random_indices = np.random.choice(number_of_rows, size=5, replace=False)
+    printDataReadable(largerevArray[random_indices,:])
+    print ("End of large rev")
+    revMax = np.max(HCArray[:,evMaxIndex])
+    revmaxPos = np.argmax(HCArray[:,evMaxIndex])
+    print ("max of rev", revMax, revmaxPos)
+    
     bandwidth = HCArray[:,16]-HCArray[:,14] # teilen durch wurzel aus varianz (oder so) LandauLevelbreite (1 Teilchen)
+    print(HCArray[revmaxPos,:])
     print ("Max bandwidth " + str(np.max(bandwidth)))
     maxIndex = np.argmax(bandwidth)
     print (maxIndex)
@@ -815,12 +830,17 @@ def plot_rev_over_bandwith(data, Ne, ia):
     print ("Min bandwidth " + str(np.min(bandwidth)))
     print (HCArray[np.argmin(bandwidth)])
     print ("====================================")
-    plt.scatter(bandwidth, HCArray[:,19])
+    plt.scatter(bandwidth, HCArray[:,evMaxIndex])
     plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
     plt.ylabel('$ r_{ev} []$', fontsize=16)
-    plt.xlim(0,1e-04)
+    plt.xlim(0,5e-04)
+    plt.ylim(0,200)
     plt.show()
-                
+    plt.scatter(bandwidth, HCArray[:,13])
+    plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
+    plt.ylabel('var V(r)')
+    
+    plt.show()
 
 
 
@@ -898,7 +918,24 @@ def createScatterbandwithvarlcorr(data, Ne, ia):
     clb = plt.colorbar(label='$\Delta E_{0,2}$ over $\sqrt{var(V(r))}$')
     plt.clim(0.0,1)
     plt.savefig("Scatterrescalebandwithvarlcorr_6_18-sri_fine.png")
-    plt.show()         
+    plt.show()   
+    
+def printDataReadable(data):
+    print ("Daten lesbar")
+    print (data.shape)
+    for dataset in data:
+        print (dataset)
+        print ('---------------------------------------')
+        print ("Ne, Nm", dataset[[0,1]])
+        print ("interaction,sigma, Vmax", dataset[[interactionIndex,sigmaIndex,VmaxIndex]])
+        print ("lcorr, variance", dataset[[8,9,13]])
+        print ("Vortexgroessen", dataset[[evMaxIndex, vvMaxIndex] ])
+        print ("Spectrum und was davor= ", dataset[[12,13,14,15,16,17]])
+        print ("Bandwidth = ", dataset[16]-dataset[14])
+        print ("gap =", dataset[17]-dataset[14])
+        
+        print ('---------------------------------------')
+              
 NeIndex = 0  # 1
 NmIndex = 1  # 2
 interactionIndex = 3  # 4 
