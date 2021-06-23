@@ -17,7 +17,7 @@ from scipy.optimize import curve_fit
 from array import array
 from random import randrange
 from docutils.languages import da
-
+import mplcursors
 # from cli.clusterEvaluation import allData
 
 rc('font', **{'family':'sans-serif', 'sans-serif':['Helvetica']})
@@ -781,6 +781,49 @@ def createPhaseDiagram(data, Ne, ia, index = 8):
     print (dataSet1[:,[sigmaIndex,VmaxIndex, index,varIndex]])
     print (np.unique(dataSet1[:,sigmaIndex]))
 
+def nsqrt(x,a,b,c,n):
+    
+    retVal = (a*x+b)**(1.0/n)+c
+    return retVal
+
+def fitToSquareRoot(xdata,ydata):
+    from scipy.optimize import curve_fit
+    print (xdata.shape)
+    print (ydata.shape)
+    array = np.column_stack((xdata,ydata))
+    print (array.shape)
+    print (array)
+    print (array[1,:])
+    cleanArray = (array[~np.isnan(array).any(axis=1),:])
+    print (cleanArray[1,:])
+    print (cleanArray.shape)
+    popt, pcov = curve_fit(nsqrt, cleanArray[:,0], cleanArray[:,1])
+    print (popt)
+    xValue = np.linspace(np.min(cleanArray[:,0]), np.max(cleanArray[:,0]),100)
+    retVal = nsqrt(xValue,popt[0],popt[1],popt[2],popt[3])
+    print ("Error")
+    print (pcov)
+    return np.column_stack((xValue,retVal))
+
+def gleitenderMittelwert(data, binCount=20):
+    print (data.shape)
+    xvals = data[:,0]
+    yvals = data[:,1]
+    print (xvals)
+    xMin = np.min(xvals)
+    xMax =np.max(xvals)
+    print ("Min, max", xMin,xMax)
+    
+    xBins = np.linspace(xMin,xMax,binCount)
+    xStart = xMin
+    for anX in xBins:
+        #select all values (data[1,:] where data[0,:] is between xStart and anX
+        partArray = data[np.where(np.logical_and(data[:,0] > xStart, data[:,0]< anX))]
+        # mean value
+        print ("Mean values", np.nanmean(partArray[:,1]), np.mean(partArray[:,1]))
+        xStart = anX
+    return None
+
 def plot_rev_over_bandwith(data, Ne, ia):
     print ("Start rev_over_bandwidth")
     print (allData.shape)
@@ -830,19 +873,56 @@ def plot_rev_over_bandwith(data, Ne, ia):
     print ("Min bandwidth " + str(np.min(bandwidth)))
     print (HCArray[np.argmin(bandwidth)])
     print ("====================================")
-    plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+    ax = plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+    mplcursors.cursor(ax).connect(
+    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+
+    plt.yscale('log')
+    plt.xscale('log')
+    fitData = fitToSquareRoot(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+    plt.plot(fitData[0,:],fitData[1,:],'--', label='Fit to $\sqrt{\Delta E_{0,2}}$')
     plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
     plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.xlim(0,5e-04)
-    plt.ylim(0,2)
+    plt.xlim(1e-10,1.0)
+    plt.ylim(1e-10,2)
+    plt.legend()
     plt.show()
-    plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+    
+    ax = plt.plot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000,'o')
+    
+    mplcursors.cursor(ax).connect(
+    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+
+   
+    fitData = fitToSquareRoot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
     print("Mittelwert")
     print(np.nanmean( HCArray[:,evMaxIndex]))
+    gleitenderMittelwert(HCArray[:,[13,evMaxIndex]], 20)
     plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
     plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
     plt.xlim(0,5e-04)
     plt.ylim(0,2)
+    plt.show()
+    ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+    print("Maximum x-value = ", np.max(bandwidth/np.sqrt(HCArray[:,13])))
+    mplcursors.cursor(ax).connect(
+    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+    plt.plot(fitData[:,0],fitData[:,1],'--',label='sqrt fit')
+    print("Mittelwert")
+    mean = np.nanmean( HCArray[:,evMaxIndex])
+    print ("vor skalierung = ", mean)
+    mean = mean*9.871/1000
+    print(mean)
+    plt.hlines(mean, 0, 5e-04, linewidth=4.0,color = 'red',label='Mean')
+    #plt.yscale('log')
+    #plt.xscale('log')
+    plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
+    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+    plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
+    plt.xlim(1e-07,5e-04)
+    plt.ylim(1e-07,2)
+    plt.legend()
+    
     plt.show()
     plt.scatter(bandwidth, HCArray[:,13])
     plt.xlabel('Bandwidth($\Delta E_{0,2}$)', fontsize=16)
@@ -865,6 +945,19 @@ def plot_rev_over_bandwith(data, Ne, ia):
     plt.xlabel('$r_{ev}[l_{0}]$', fontsize=16)
     plt.ylabel('$\Delta E_{0,2} / var V(r)$')
     
+    plt.show()
+    # rev over variance for small bandwidth
+    smallBandwidthArray = HCArray[np.where(np.abs(HCArray[:,16]-HCArray[:,14])< 1e-23)]
+    print(smallBandwidthArray[1,:])
+    print (smallBandwidthArray.shape)
+    ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
+    #mplcursors.cursor(ax).connect(
+    #"add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
+    plt.suptitle("Small bandwidth ( 0 up to numerical precision)")
+    plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
+    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+    plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
+    plt.xlim(left=0.0)
     plt.show()
 
 def createScatterbandwithvarlcorr(data, Ne, ia):
@@ -926,6 +1019,7 @@ def createScatterbandwithvarlcorr(data, Ne, ia):
     plt.ylabel('$ var (V(r)$', fontsize=16)
     
     clb = plt.colorbar(label='$\Delta E_{0,2}$ over $ \sqrt{var(V(r))}$')
+    plt.ticklabel_format(axis="y", style="sci", scilimits=(0,0))
     plt.clim(0.0,5.0)
     plt.savefig("Scatterbandwithvarlcorr_6_18-sri.png")
     plt.show()         
@@ -941,8 +1035,21 @@ def createScatterbandwithvarlcorr(data, Ne, ia):
     clb = plt.colorbar(label='$\Delta E_{0,2}$ over $\sqrt{var(V(r))}$')
     plt.clim(0.0,1)
     plt.savefig("Scatterrescalebandwithvarlcorr_6_18-sri_fine.png")
-    plt.show()   
-    
+    plt.show()
+    print ("End of createScatterbandwithvarlcorr")
+
+def dataSetToString(dataset):
+    print (dataset.shape)
+    print(dataset)
+    retval =  "$\sigma$, $V_{max}$"+ str(dataset[[sigmaIndex,VmaxIndex]]) +" \\ "
+    retval = retval + "$l_{corr}$, variance"+  str(dataset[[8,9,13]]) +" \\ "
+    retval = retval+ "Vortexgroessen"+ str(dataset[[evMaxIndex, vvMaxIndex] ]) +" \\ "
+        #print ("Spectrum und was davor= ", dataset[[12,13,14,15,16,17]])
+    retval = retval + "Bandwidth = "+ str( dataset[16]-dataset[14]) +" \\ "
+    retval = retval + "gap =", str(dataset[17]-dataset[14])+" \\ "
+    print (retval)
+    return (retval)
+        
 def printDataReadable(data):
     print ("Daten lesbar")
     print (data.shape)
@@ -980,7 +1087,8 @@ gap_homo_SRI_6_18_sri = 0.195254103
 gap_homo_Coulomb_6_18 = 0.063009445
 evMaxIndex_Coulomb = 80
 # fileName = "testREsults_6_18_coul.dat"
-fileName = "CompleteData_5_6_imps_multipleCosigmas.dat"
+#fileName = "CompleteData_5_6_imps_multipleCosigmas.dat"
+fileName = "testResults_6-18_revisited.dat"
 #fileName = "temp.dat"
 #fileName = "testResults_valid_5-15.dat"
 #fileName ="testResults_valid_5-15.dat"

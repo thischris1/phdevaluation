@@ -26,8 +26,8 @@ class Test(unittest.TestCase):
 
     def testName(self):
         print ("Start")
-        startDir = "/home/chris/cluster/clusterResults2/5-15/vosigma1e-05/sigma0125"
-        filehandle = open("testResults_5-15_vosigma1e05_sigma0125.dat", "w+")
+        startDir = "/home/chris/cluster/clusterResults2/6_18"
+        filehandle = open("testResults_6-18_revisited.dat", "w+")
         # find all dirs with dir_ in name
         for root, dirs, files in os.walk(startDir, topdown=False):
            # for name in files:
