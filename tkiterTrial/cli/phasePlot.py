@@ -752,6 +752,7 @@ def createPhaseDiagram(data, Ne, ia, index = 8):
     anot = plt.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
                     bbox=dict(boxstyle="round", fc="w"),
                     arrowprops=dict(arrowstyle="->"))
+    
     anot.set_visible(True)
     plt.ylim(bottom=minVar-0.000001, top=maxVar)
     plt.xlim(left=0.0)
@@ -805,24 +806,38 @@ def fitToSquareRoot(xdata,ydata):
     print (pcov)
     return np.column_stack((xValue,retVal))
 
-def gleitenderMittelwert(data, binCount=20):
+def gleitenderMittelwert(data, binCount=100, xMin=0 , xMax=1, logSpace = False):
     print (data.shape)
     xvals = data[:,0]
-    yvals = data[:,1]
-    print (xvals)
-    xMin = np.min(xvals)
-    xMax =np.max(xvals)
-    print ("Min, max", xMin,xMax)
     
-    xBins = np.linspace(xMin,xMax,binCount)
+    print (xvals)
+    #xMin = np.min(xvals)
+    if xMax >np.max(xvals):
+        xMax = np.max(xvals)
+    print ("Min, max", xMin,xMax)
+    if logSpace is False:
+        xBins = np.linspace(xMin,xMax,binCount)
+    else:
+        begin = np.log10(xMin)
+        end = np.log10(xMax)
+        xBins= np.logspace(begin,end,binCount)
+    print (xBins)
+    print (xBins[0]- xBins[1])
+    
     xStart = xMin
+    retVal = np.empty((0,6))
     for anX in xBins:
         #select all values (data[1,:] where data[0,:] is between xStart and anX
+        deltaX = anX-xStart
         partArray = data[np.where(np.logical_and(data[:,0] > xStart, data[:,0]< anX))]
         # mean value
-        print ("Mean values", np.nanmean(partArray[:,1]), np.mean(partArray[:,1]))
+        if len(partArray) > 0:
+            print("Data points", str(len(partArray)))
+            print ("Mean values", np.nanmean(partArray[:,1]), np.mean(partArray[:,1]), np.nanvar(partArray[:,1]),len(partArray), deltaX )
+            retPart = (anX,np.nanmean(partArray[:,1]), np.mean(partArray[:,1]), np.nanvar(partArray[:,1]), len(partArray), deltaX )
+            retVal= np.vstack((retVal,retPart))
         xStart = anX
-    return None
+    return retVal
 
 def plot_rev_over_bandwith(data, Ne, ia):
     print ("Start rev_over_bandwidth")
@@ -872,22 +887,49 @@ def plot_rev_over_bandwith(data, Ne, ia):
     print (HCArray[maxIndex,:])
     print ("Min bandwidth " + str(np.min(bandwidth)))
     print (HCArray[np.argmin(bandwidth)])
+    packedData = bandwidth
+    packedData = np.column_stack((packedData,HCArray[:,evMaxIndex]))
+    mittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, False)
+    mittelWerte2 = gleitenderMittelwert(packedData, 50, 1e-08, 1e-04, False)
+    
+    print (mittelWerte)
+    #print (mittelWerte2)
+    logMittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, True)
+    print ("LOGMITTEL")
+    print (logMittelWerte)
     print ("====================================")
-    ax = plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+    ax = plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000, label="raw data")
+    #plt.plot(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,'ro', label="Mittelwerte")
+    #plt.plot(mittelWerte2[:,0], mittelWerte2[:,2]*9.871/1000,'ro',label='')
+    plt.plot(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000,'go',label='log. Mittel')
+    #plt.errorbar(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000, logMittelWerte[:,5], logMittelWerte[:,4],'go',label='log. Mittel')
     mplcursors.cursor(ax).connect(
     "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
-
     plt.yscale('log')
     plt.xscale('log')
-    fitData = fitToSquareRoot(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
-    plt.plot(fitData[0,:],fitData[1,:],'--', label='Fit to $\sqrt{\Delta E_{0,2}}$')
+    #fitData = fitToSquareRoot(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+    print(mittelWerte[:,0])
+    #plt.plot(mittelWerte[:,0], mittelWerte[:,1],'o', label = 'Mittelwerte')
     plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
     plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.xlim(1e-10,1.0)
-    plt.ylim(1e-10,2)
+    plt.xlim(1e-10,1e-2)
+    plt.ylim(1e-3,2)
+    plt.legend()
+    #plt.show()
+    #plt.plot(fitData[0,:],fitData[1,:],'--', label='Fit to $\sqrt{\Delta E_{0,2}}$')
+    print(mittelWerte[:,3])
+    plt.show()
+    plt.plot(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,'ro', label="Mittelwerte")
+    plt.plot(mittelWerte2[:,0], mittelWerte2[:,2]*9.871/1000,'ro', label='')
+    plt.errorbar(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,np.sqrt(mittelWerte[:,3])*9.871/1000, mittelWerte[:,5])
+    plt.xlim(1e-10,1e-2)
+    plt.ylim(1e-3,2)
+    plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
+    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+    #plt.yscale('log')
+    #plt.xscale('log')
     plt.legend()
     plt.show()
-    
     ax = plt.plot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000,'o')
     
     mplcursors.cursor(ax).connect(
@@ -897,13 +939,15 @@ def plot_rev_over_bandwith(data, Ne, ia):
     fitData = fitToSquareRoot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
     print("Mittelwert")
     print(np.nanmean( HCArray[:,evMaxIndex]))
-    gleitenderMittelwert(HCArray[:,[13,evMaxIndex]], 20)
+    mittel = gleitenderMittelwert(HCArray[:,[13,evMaxIndex]], 50)
     plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
     plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
     plt.xlim(0,5e-04)
     plt.ylim(0,2)
     plt.show()
-    ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+    #ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+    ax = plt.scatter(np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+    #plt.plot(mittel[:,0],mittel[:1],'o')
     print("Maximum x-value = ", np.max(bandwidth/np.sqrt(HCArray[:,13])))
     mplcursors.cursor(ax).connect(
     "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
@@ -951,13 +995,13 @@ def plot_rev_over_bandwith(data, Ne, ia):
     print(smallBandwidthArray[1,:])
     print (smallBandwidthArray.shape)
     ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
-    #mplcursors.cursor(ax).connect(
-    #"add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
+    mplcursors.cursor(ax).connect(
+    "add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
     plt.suptitle("Small bandwidth ( 0 up to numerical precision)")
     plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
     plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
     plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
-    plt.xlim(left=0.0)
+    plt.xlim(left=0.0, right=1.5e-03)
     plt.show()
 
 def createScatterbandwithvarlcorr(data, Ne, ia):
@@ -1042,12 +1086,12 @@ def dataSetToString(dataset):
     print (dataset.shape)
     print(dataset)
     retval =  "$\sigma$, $V_{max}$"+ str(dataset[[sigmaIndex,VmaxIndex]]) +" \\ "
-    retval = retval + "$l_{corr}$, variance"+  str(dataset[[8,9,13]]) +" \\ "
-    retval = retval+ "Vortexgroessen"+ str(dataset[[evMaxIndex, vvMaxIndex] ]) +" \\ "
+    retval = retval + "$l_{corr}$ (1d,x,y), variance"+  str(dataset[[8,9,10,13]]) +" \\ "
+    retval = retval+ "Vortexgroessen (ev,vv)"+ str(dataset[[evMaxIndex, vvMaxIndex] ]) +" \\ "
         #print ("Spectrum und was davor= ", dataset[[12,13,14,15,16,17]])
     retval = retval + "Bandwidth = "+ str( dataset[16]-dataset[14]) +" \\ "
     retval = retval + "gap =", str(dataset[17]-dataset[14])+" \\ "
-    print (retval)
+    #print (retval)
     return (retval)
         
 def printDataReadable(data):
