@@ -854,11 +854,18 @@ def plot_rev_over_bandwith(data, Ne, ia):
     print (theData.shape)
     
     
-    electronNumberDataArray =theData[theData[:,0]==Ne] 
-    HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==1]
+    electronNumberDataArray =theData[theData[:,0]==Ne]
+    
+    HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==ia]
+    if ia == 0:
+        # remove senseless data
+        HCArray = HCArray[np.where(HCArray[:,evMaxIndex]> 10)]
+        smallrevArray = HCArray[np.where(np.abs(HCArray[:,evMaxIndex]-80) < 2)]
+    else:
+        smallrevArray = HCArray[np.where(HCArray[:,evMaxIndex] < 2)]
     unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
     # Filter data were rev < 2, print bandwidth
-    smallrevArray = HCArray[np.where(HCArray[:,evMaxIndex] < 2)]
+    
     number_of_rows = smallrevArray.shape[0]
     random_indices = np.random.choice(number_of_rows, size=5, replace=False)
      
@@ -1085,7 +1092,11 @@ def createScatterbandwithvarlcorr(data, Ne, ia):
 def dataSetToString(dataset):
     print (dataset.shape)
     print(dataset)
-    retval =  "$\sigma$, $V_{max}$"+ str(dataset[[sigmaIndex,VmaxIndex]]) +" \\ "
+    if dataset[interactionIndex] == 1:
+        retval = 'HC \\'
+    else:
+        retval = 'Coulomb \\'
+    retval =  retval +"$\sigma$, $V_{max}$"+ str(dataset[[sigmaIndex,VmaxIndex]]) +" \\ "
     retval = retval + "$l_{corr}$ (1d,x,y), variance"+  str(dataset[[8,9,10,13]]) +" \\ "
     retval = retval+ "Vortexgroessen (ev,vv)"+ str(dataset[[evMaxIndex, vvMaxIndex] ]) +" \\ "
         #print ("Spectrum und was davor= ", dataset[[12,13,14,15,16,17]])
@@ -1100,6 +1111,7 @@ def printDataReadable(data):
     for dataset in data:
         print (dataset)
         print ('---------------------------------------')
+        
         print ("Ne, Nm", dataset[[0,1]])
         print ("interaction,sigma, Vmax", dataset[[interactionIndex,sigmaIndex,VmaxIndex]])
         print ("lcorr, variance", dataset[[8,9,13]])
@@ -1151,12 +1163,15 @@ print (extraColumn.shape)
 allData = np.append(allData, extraColumn, axis=1)
 
 print (allData.shape)
+plot_rev_over_bandwith(allData, 6,0)
 plot_rev_over_bandwith(allData, 6,1)
 createScatterbandwithvarlcorr(allData, 6, 1)
-sys.exit()
-createPhaseDiagram(allData, 5,1)
+createScatterbandwithvarlcorr(allData, 6, 0)
+
+createPhaseDiagram(allData, 6,0)
 createPhaseDiagram(allData, 6,1)
-createPhaseDiagram(allData, 6, 1, 19)
+
+sys.exit()
 plotDataAndExponentialFit(allData,6,1)
 plotDataAndExponentialFit(allData,6,0)
 createPhaseDiagram(allData, 6,0)
