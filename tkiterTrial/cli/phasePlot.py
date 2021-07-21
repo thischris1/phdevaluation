@@ -839,7 +839,7 @@ def gleitenderMittelwert(data, binCount=100, xMin=0 , xMax=1, logSpace = False):
         xStart = anX
     return retVal
 
-def plot_rev_over_bandwith(data, Ne, ia):
+def plot_rev_over_bandwith(data, Ne, interaction):
     print ("Start rev_over_bandwidth")
     print (allData.shape)
     print (allData[0,4])
@@ -853,163 +853,185 @@ def plot_rev_over_bandwith(data, Ne, ia):
     
     print (theData.shape)
     
-    
+   
     electronNumberDataArray =theData[theData[:,0]==Ne]
-    
-    HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==ia]
-    if ia == 0:
+    for ia in interaction:
+        HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==ia]
+        if ia == 0:
         # remove senseless data
-        HCArray = HCArray[np.where(HCArray[:,evMaxIndex]> 10)]
-        smallrevArray = HCArray[np.where(np.abs(HCArray[:,evMaxIndex]-80) < 2)]
-    else:
-        smallrevArray = HCArray[np.where(HCArray[:,evMaxIndex] < 2)]
-    unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
-    # Filter data were rev < 2, print bandwidth
+            HCArray = HCArray[np.where(HCArray[:,evMaxIndex]> 10)]
+            smallrevArray = HCArray[np.where(np.abs(HCArray[:,evMaxIndex]-80) < 2)]
+            
+            titleString = "CI"
+            
+            plotcolor = 'b'
+            mediumcolor = 'r'
+        else:
+            smallrevArray = HCArray[np.where(HCArray[:,evMaxIndex] < 2)]
+            titleString = "SRI"
+            
+            plotcolor='g'
+            mediumcolor='black'
+        unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
+        # Filter data were rev < 2, print bandwidth
     
-    number_of_rows = smallrevArray.shape[0]
-    random_indices = np.random.choice(number_of_rows, size=5, replace=False)
-     
-    printDataReadable(smallrevArray[random_indices,:])
-    #print (smallrevArray[0,:])
-    #print ("Selected values, evMax, vvMax, lcorr, 2 states")
-    #print (smallrevArray[:,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
-    #print ("---------------------------------------------------")
-    #print (smallrevArray[0,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
-    #print(smallrevArray[:,evMaxIndex])
-    print ("End of small rev")
-    largerevArray = HCArray[np.where(HCArray[:,evMaxIndex]> 100)]
-    number_of_rows = largerevArray.shape[0]
-    random_indices = np.random.choice(number_of_rows, size=5, replace=False)
-    printDataReadable(largerevArray[random_indices,:])
-    print ("End of large rev")
-    revMax = np.max(HCArray[:,evMaxIndex])
-    revmaxPos = np.argmax(HCArray[:,evMaxIndex])
-    print ("max of rev", revMax, revmaxPos)
+        number_of_rows = smallrevArray.shape[0]
+        random_indices = np.random.choice(number_of_rows, size=5, replace=False)
     
-    bandwidth = HCArray[:,16]-HCArray[:,14] # teilen durch wurzel aus varianz (oder so) LandauLevelbreite (1 Teilchen)
-    print(HCArray[revmaxPos,:])
-    print ("Max bandwidth " + str(np.max(bandwidth)))
-    maxIndex = np.argmax(bandwidth)
-    print (maxIndex)
-    print (HCArray[maxIndex,:])
-    print ("Min bandwidth " + str(np.min(bandwidth)))
-    print (HCArray[np.argmin(bandwidth)])
-    packedData = bandwidth
-    packedData = np.column_stack((packedData,HCArray[:,evMaxIndex]))
-    mittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, False)
-    mittelWerte2 = gleitenderMittelwert(packedData, 50, 1e-08, 1e-04, False)
+        printDataReadable(smallrevArray[random_indices,:])
+        #print (smallrevArray[0,:])
+        #print ("Selected values, evMax, vvMax, lcorr, 2 states")
+        #print (smallrevArray[:,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
+        #print ("---------------------------------------------------")
+        #print (smallrevArray[0,[evMaxIndex, vvMaxIndex,lcorrIndex,14,16]])
+        #print(smallrevArray[:,evMaxIndex])
+        print ("End of small rev")
+        largerevArray = HCArray[np.where(HCArray[:,evMaxIndex]> 100)]
+        number_of_rows = largerevArray.shape[0]
+        random_indices = np.random.choice(number_of_rows, size=5, replace=False)
+        printDataReadable(largerevArray[random_indices,:])
+        print ("End of large rev")
+        revMax = np.max(HCArray[:,evMaxIndex])
+        revmaxPos = np.argmax(HCArray[:,evMaxIndex])
+        print ("max of rev", revMax, revmaxPos)
     
-    print (mittelWerte)
-    #print (mittelWerte2)
-    logMittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, True)
-    print ("LOGMITTEL")
-    print (logMittelWerte)
-    print ("====================================")
-    ax = plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000, label="raw data")
-    #plt.plot(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,'ro', label="Mittelwerte")
-    #plt.plot(mittelWerte2[:,0], mittelWerte2[:,2]*9.871/1000,'ro',label='')
-    plt.plot(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000,'go',label='log. Mittel')
-    #plt.errorbar(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000, logMittelWerte[:,5], logMittelWerte[:,4],'go',label='log. Mittel')
-    mplcursors.cursor(ax).connect(
-    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
-    plt.yscale('log')
-    plt.xscale('log')
-    #fitData = fitToSquareRoot(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
-    print(mittelWerte[:,0])
-    #plt.plot(mittelWerte[:,0], mittelWerte[:,1],'o', label = 'Mittelwerte')
-    plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
-    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.xlim(1e-10,1e-2)
-    plt.ylim(1e-3,2)
-    plt.legend()
-    #plt.show()
-    #plt.plot(fitData[0,:],fitData[1,:],'--', label='Fit to $\sqrt{\Delta E_{0,2}}$')
-    print(mittelWerte[:,3])
-    plt.show()
-    plt.plot(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,'ro', label="Mittelwerte")
-    plt.plot(mittelWerte2[:,0], mittelWerte2[:,2]*9.871/1000,'ro', label='')
-    plt.errorbar(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,np.sqrt(mittelWerte[:,3])*9.871/1000, mittelWerte[:,5])
-    plt.xlim(1e-10,1e-2)
-    plt.ylim(1e-3,2)
-    plt.xlabel('$\Delta E_{0,2}$', fontsize=16)
-    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    #plt.yscale('log')
-    #plt.xscale('log')
-    plt.legend()
-    plt.show()
-    ax = plt.plot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000,'o')
+        bandwidth = HCArray[:,16]-HCArray[:,14] # teilen durch wurzel aus varianz (oder so) LandauLevelbreite (1 Teilchen)
+        print(HCArray[revmaxPos,:])
+        print ("Max bandwidth " + str(np.max(bandwidth)))
+        maxIndex = np.argmax(bandwidth)
+        print (maxIndex)
+        print (HCArray[maxIndex,:])
+        print ("Min bandwidth " + str(np.min(bandwidth)))
+        print (HCArray[np.argmin(bandwidth)])
+        packedData = bandwidth
+        packedData = np.column_stack((packedData,HCArray[:,evMaxIndex]))
+        mittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, False)
+        mittelWerte2 = gleitenderMittelwert(packedData, 50, 1e-08, 1e-04, False)
+        if ia == 0:
+            coulMittelWerte = mittelWerte
+            coulMittelWerte2 = mittelWerte2
+        else:
+            hcMittelWerte = mittelWerte
+            hcMittelWerte2 = mittelWerte2
+        print (mittelWerte)
+        #print (mittelWerte2)
+        logMittelWerte = gleitenderMittelwert(packedData, 20, 1e-10, 1e-02, True)
+        print ("LOGMITTEL")
+        print (logMittelWerte)
+        print ("====================================")
+        ax = plt.scatter(bandwidth, HCArray[:,evMaxIndex]*9.871/1000,color=plotcolor, label=titleString + " raw data")
+        #plt.plot(mittelWerte[:,0], mittelWerte[:,2]*9.871/1000,'ro', label="Mittelwerte")
+        #plt.plot(mittelWerte2[:,0], mittelWerte2[:,2]*9.871/1000,'ro',label='')
+        plt.plot(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000,'o',ms = 10,color=mediumcolor,label=titleString+', log. Average')
+        #plt.errorbar(logMittelWerte[:,0], logMittelWerte[:,2]*9.871/1000, logMittelWerte[:,5], logMittelWerte[:,4],'go',label='log. Mittel')
+        mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+        plt.yscale('log')
+        plt.xscale('log')
+        if len(interaction)>1:
+            plt.title("Comparison of interaction types")
+        else:
+            plt.title(titleString)
+        #fitData = fitToSquareRoot(bandwidth, HCArray[:,evMaxIndex]*9.871/1000)
+        print(mittelWerte[:,0])
+        #plt.plot(mittelWerte[:,0], mittelWerte[:,1],'o', label = 'Mittelwerte')
+        plt.xlabel('$\Delta E_{0,2} [enu]$', fontsize=16)
+        plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+        plt.xlim(1e-10,1e-2)
+        plt.ylim(1e-3,2)
+        plt.legend(loc='lower right')
+        #plt.show()
+        #plt.plot(fitData[0,:],fitData[1,:],'--', label='Fit to $\sqrt{\Delta E_{0,2}}$')
+        print(mittelWerte[:,3])
+        if ia == 0:
+            continue
+        else:
+            plt.show()
+            
+        plt.plot(hcMittelWerte[:,0], hcMittelWerte[:,2]*9.871/1000,'ro', label=" SRI Mean values")
+        plt.plot(hcMittelWerte2[:,0], hcMittelWerte2[:,2]*9.871/1000,'ro', label='')
+        plt.errorbar(hcMittelWerte[:,0], hcMittelWerte[:,2]*9.871/1000,np.sqrt(hcMittelWerte[:,3])*9.871/1000, hcMittelWerte[:,5])
+        plt.plot(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label=" CI Mean values")
+        plt.plot(coulMittelWerte2[:,0], (coulMittelWerte2[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label='')
+        plt.errorbar(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,np.sqrt(coulMittelWerte[:,3])*9.871/1000, coulMittelWerte[:,5])
+        plt.xlim(1e-10,1e-2)
+        plt.ylim(1e-3,2)
+        plt.xlabel('$\Delta E_{0,2} [enu]$', fontsize=16)
+        plt.ylabel('$ \Delta r_{ev} [l_{0}]$', fontsize=16)
+        #plt.yscale('log')
+        #plt.xscale('log')
+        plt.legend()
+        plt.show()
+        ax = plt.plot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000,'o')
     
-    mplcursors.cursor(ax).connect(
-    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+        mplcursors.cursor(ax).connect(
+         "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
 
    
-    fitData = fitToSquareRoot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
-    print("Mittelwert")
-    print(np.nanmean( HCArray[:,evMaxIndex]))
-    mittel = gleitenderMittelwert(HCArray[:,[13,evMaxIndex]], 50)
-    plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
-    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.xlim(0,5e-04)
-    plt.ylim(0,2)
-    plt.show()
-    #ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
-    ax = plt.scatter(np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
-    #plt.plot(mittel[:,0],mittel[:1],'o')
-    print("Maximum x-value = ", np.max(bandwidth/np.sqrt(HCArray[:,13])))
-    mplcursors.cursor(ax).connect(
-    "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
-    plt.plot(fitData[:,0],fitData[:,1],'--',label='sqrt fit')
-    print("Mittelwert")
-    mean = np.nanmean( HCArray[:,evMaxIndex])
-    print ("vor skalierung = ", mean)
-    mean = mean*9.871/1000
-    print(mean)
-    plt.hlines(mean, 0, 5e-04, linewidth=4.0,color = 'red',label='Mean')
-    #plt.yscale('log')
-    #plt.xscale('log')
-    plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
-    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
-    plt.xlim(1e-07,5e-04)
-    plt.ylim(1e-07,2)
-    plt.legend()
+        fitData = fitToSquareRoot(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+        print("Mittelwert")
+        print(np.nanmean( HCArray[:,evMaxIndex]))
+        mittel = gleitenderMittelwert(HCArray[:,[13,evMaxIndex]], 50)
+        plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
+        plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+        plt.xlim(0,5e-04)
+        plt.ylim(0,2)
+        plt.show()
+        #ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+        ax = plt.scatter(np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+        #plt.plot(mittel[:,0],mittel[:1],'o')
+        print("Maximum x-value = ", np.max(bandwidth/np.sqrt(HCArray[:,13])))
+        mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+        plt.plot(fitData[:,0],fitData[:,1],'--',label='sqrt fit')
+        print("Mittelwert")
+        mean = np.nanmean( HCArray[:,evMaxIndex])
+        print ("vor skalierung = ", mean)
+        mean = mean*9.871/1000
+        print(mean)
+        plt.hlines(mean, 0, 5e-04, linewidth=4.0,color = 'red',label='Mean')
+        #plt.yscale('log')
+        #plt.xscale('log')
+        plt.xlabel('$\Delta E_{0,2} / var(V(r))$', fontsize=16)
+        plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+        plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
+        plt.xlim(1e-07,5e-04)
+        plt.ylim(1e-07,2)
+        plt.legend()
     
-    plt.show()
-    plt.scatter(bandwidth, HCArray[:,13])
-    plt.xlabel('Bandwidth($\Delta E_{0,2}$)', fontsize=16)
-    plt.ylabel(' ($ var V(r)$')
-    plt.ylim(0,1e-04)
-    plt.xlim(0,0.2)
-    plt.show()
-    plt.scatter(bandwidth, np.sqrt(HCArray[:,13]))
-    plt.xlabel('Bandwidth($\Delta E_{0,2} [enu]$)', fontsize=16)
-    plt.ylabel('  $\sqrt{var V(r)}$')
-    plt.ylim(0,0.02)
-    plt.xlim(0,0.2)
-    plt.show()
-    plt.scatter(HCArray[:,8]*9.871/200, bandwidth/np.sqrt(HCArray[:,13]))
-    plt.xlabel('$l_{corr}[l_{0}]$', fontsize=16)
-    plt.ylabel('$\Delta E_{0,2} / var V(r)$')
+        plt.show()
+        plt.scatter(bandwidth, HCArray[:,13])
+        plt.xlabel('Bandwidth($\Delta E_{0,2}$)', fontsize=16)
+        plt.ylabel(' ($ var V(r)$')
+        plt.ylim(0,1e-04)
+        plt.xlim(0,0.2)
+        plt.show()
+        plt.scatter(bandwidth, np.sqrt(HCArray[:,13]))
+        plt.xlabel('Bandwidth($\Delta E_{0,2} [enu]$)', fontsize=16)
+        plt.ylabel('  $\sqrt{var V(r)}$')
+        plt.ylim(0,0.02)
+        plt.xlim(0,0.2)
+        plt.show()
+        plt.scatter(HCArray[:,8]*9.871/200, bandwidth/np.sqrt(HCArray[:,13]))
+        plt.xlabel('$l_{corr}[l_{0}]$', fontsize=16)
+        plt.ylabel('$\Delta E_{0,2} / var V(r)$')
     
-    plt.show()
-    plt.scatter(HCArray[:,evMaxIndex]*9.871/1000, bandwidth/np.sqrt(HCArray[:,13]))
-    plt.xlabel('$r_{ev}[l_{0}]$', fontsize=16)
-    plt.ylabel('$\Delta E_{0,2} / var V(r)$')
+        plt.show()
+        plt.scatter(HCArray[:,evMaxIndex]*9.871/1000, bandwidth/np.sqrt(HCArray[:,13]))
+        plt.xlabel('$r_{ev}[l_{0}]$', fontsize=16)
+        plt.ylabel('$\Delta E_{0,2} / var V(r)$')
     
-    plt.show()
-    # rev over variance for small bandwidth
-    smallBandwidthArray = HCArray[np.where(np.abs(HCArray[:,16]-HCArray[:,14])< 1e-23)]
-    print(smallBandwidthArray[1,:])
-    print (smallBandwidthArray.shape)
-    ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
-    mplcursors.cursor(ax).connect(
-    "add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
-    plt.suptitle("Small bandwidth ( 0 up to numerical precision)")
-    plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
-    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
-    plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
-    plt.xlim(left=0.0, right=1.5e-03)
-    plt.show()
+        plt.show()
+        # rev over variance for small bandwidth
+        smallBandwidthArray = HCArray[np.where(np.abs(HCArray[:,16]-HCArray[:,14])< 1e-23)]
+        print(smallBandwidthArray[1,:])
+        print (smallBandwidthArray.shape)
+        ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
+        mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
+        plt.suptitle("Small bandwidth ( 0 up to numerical precision)")
+        plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
+        plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+        plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
+        plt.xlim(left=0.0, right=1.5e-03)
+        plt.show()
 
 def createScatterbandwithvarlcorr(data, Ne, ia):
     print ("Start bandwidthscatter")
@@ -1163,7 +1185,7 @@ print (extraColumn.shape)
 allData = np.append(allData, extraColumn, axis=1)
 
 print (allData.shape)
-plot_rev_over_bandwith(allData, 6,0)
+plot_rev_over_bandwith(allData, 6,[0,1])
 plot_rev_over_bandwith(allData, 6,1)
 createScatterbandwithvarlcorr(allData, 6, 1)
 createScatterbandwithvarlcorr(allData, 6, 0)
