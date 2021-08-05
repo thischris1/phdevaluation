@@ -3,7 +3,8 @@ Created on Jan 1, 2020
 
 @author: chris
 '''
-from sympy.physics.continuum_mechanics.beam import matplotlib
+import matplotlib.pyplot as plt
+
 from matplotlib.widgets import Slider
 
 if __name__ == '__main__':
@@ -65,24 +66,25 @@ class App:
 root = Tk()
 app1 = App(root)
 app2 = App(root)
+root.wm_title("Embedding in Tk")
+
+
+
+#root = tkinter.Tk()
+
+# 
+# 
+fig = Figure(figsize=(5, 4), dpi=100)
+t = np.arange(0, 3, .01)
+fig.add_subplot(111).plot(t, 2 * np.sin(2 * np.pi * t))
+# 
+canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
+canvas.draw()
+canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+# 
+toolbar = NavigationToolbar2Tk(canvas, root)
+toolbar.update()
+canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+# 
 root.mainloop()
 
-
-
-# root = tkinter.Tk()
-# root.wm_title("Embedding in Tk")
-# 
-# 
-# fig = Figure(figsize=(5, 4), dpi=100)
-# t = np.arange(0, 3, .01)
-# fig.add_subplot(111).plot(t, 2 * np.sin(2 * np.pi * t))
-# 
-# canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
-# canvas.draw()
-# canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-# 
-# #toolbar = NavigationToolbar2Tk(canvas, root)
-# #toolbar.update()
-# canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-# 
-# tkinter.mainloop()

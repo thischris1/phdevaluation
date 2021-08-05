@@ -16,8 +16,10 @@ from pylab import *
 from scipy.optimize import curve_fit
 from array import array
 from random import randrange
-from docutils.languages import da
+
 import mplcursors
+
+
 # from cli.clusterEvaluation import allData
 
 rc('font', **{'family':'sans-serif', 'sans-serif':['Helvetica']})
@@ -488,7 +490,9 @@ def plotDataAndExponentialFit(data, Ne, ia, maximum=False):
     if ia == 0:
         HCArray = HCArray[np.where(HCArray[:,evMaxIndex]>10)]
     fitArray = HCArray[~np.isnan(HCArray[:, lcorrIndex])]
+    
     fitArray = fitArray[~np.isnan(fitArray[:, evMaxIndex])]
+    
     # fitArray = fitArray[np.where(fitArray[:,evMaxIndex]>2)]
     firstFitSuccess = True
     try:
@@ -530,11 +534,11 @@ def plotDataAndExponentialFit(data, Ne, ia, maximum=False):
       #  axs[1,0].plot(vosigmaConstArray[:,lcorrIndex], vosigmaConstArray [:,evMaxIndex], '*', label = labelString)
         # axs[1,1].plot(vosigmaConstArray[:,lcorrIndex], vosigmaConstArray [:,vvMaxIndex], '+', label = labelString)
         
-    plot(fitArray[:, lcorrIndex] * unitCellSize / 200, fitArray[:, evMaxIndex] * unitCellSize / 1000, 'ro' )
+    plot(fitArray[:, lcorrIndex] * unitCellSize / 200, fitArray[:, evMaxIndex] * unitCellSize / 1000, 'ro', label ='raw Data' )
     plot(expxData , expyData , label=legendString, lw=4)
     plt.xlabel('$l_{corr} [l_{0}]$', fontsize=16)
     if ia == 0:
-        plt.ylabel('$\Delta r_{ev}r_{ev}^{homo}[l_{0}]$', fontsize=16)
+        plt.ylabel('$r_{ev}[l_{0}]$', fontsize=16)
         titleString ="Coulomb"
     else:
         plt.ylabel('$r_{ev}[l_{0}]$', fontsize=16)
@@ -662,7 +666,7 @@ def checkFile(file):
     return 
 
 
-def createPhaseDiagram(data, Ne, ia, index = 8):
+def createPhaseDiagram(data, Ne, ia, index = 8,bandWidthLimit = False):
     if Ne == 5:
         theData = allData[allData[:, impCountIndex] == 4000]
         
@@ -672,12 +676,39 @@ def createPhaseDiagram(data, Ne, ia, index = 8):
     unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
     results = np.empty((0,4))
     electronNumberDataArray = theData[theData[:, 0] == Ne]  
+    homoValue = 0
     iaArray = electronNumberDataArray[electronNumberDataArray[:, interactionIndex] == ia]
-
+    if ia == coulombInteraction:
+        iaArray = iaArray[iaArray[:,evMaxIndex] > 0.5*evMaxIndex_Coulomb]
+        homoValue = evMaxIndex_Coulomb
+    
+    if bandWidthLimit is True:
+        iaArray = iaArray[np.where(np.abs((iaArray[:,16]-iaArray[:,14])/(iaArray[:,17]-iaArray[:,14]))< 0.5)]
+    print ("Total data points" + str(len(iaArray)))
     maxLcorr = np.amax(iaArray[:,index])
     minLcorr = np.amin(iaArray[:,index])
     maxVar = 5e-05
     minVar = 0.0
+    # make raw data scatter plot 
+    ax = plt.scatter(iaArray[:,index]* unitCellSize / 200, iaArray[:,varIndex], c=(iaArray[:,evMaxIndex]-homoValue)*9.871/1000)
+    
+    mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(iaArray[sel.target.index,:])))
+
+    plt.ylim(bottom=minVar-0.000001, top=maxVar)
+    plt.xlim(left=0.0)
+    plt.ticklabel_format(axis="y", style="sci", scilimits=(0,0))
+    plt.xlabel('$l_{corr} [l_{0}]$', fontsize=16)
+    plt.ylabel('$ var (V(r)$', fontsize=16)
+    cbar = plt.colorbar()
+    if ia == 0:
+        plt.title("Coulomb interaction")
+        cbar.set_label("$\Delta r_{ev}$", fontsize=14.0)
+    else:
+        plt.title("Short range interaction")
+        cbar.set_label("$r_{ev}$", fontsize=14.0)
+    plt.clim(0.0,1.0)
+    plt.savefig("rawDataPhasePlot.eps", format='eps')
+    plt.show()
     binCount=50
     print ("Lcorr", maxLcorr, minLcorr)
     print ("Variance", maxVar, minVar)
@@ -725,6 +756,8 @@ def createPhaseDiagram(data, Ne, ia, index = 8):
                 lastData = boxedInData[0,:]
                 lastVar = aVariance
                 lastLCorr = lcorr
+                revAverage = revAverage - homoValue
+                
                 partResult = (aVariance,lcorr,revAverage,points)
             results = np.vstack((results,partResult))
         print (results)
@@ -749,26 +782,34 @@ def createPhaseDiagram(data, Ne, ia, index = 8):
     print (results[np.where(results[:,2] < 0)])
     plt.scatter(results[:,1]* unitCellSize / 200, results[:,0], c=results[:,2], cmap=cmap, norm=norm,marker= 's', s=80.0)
 #    plt.scatter(results[:,1], results[:,0], c=results[:,2], cmap=cmap, norm=norm,marker= 's', s=80.0)
-    anot = plt.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
-                    bbox=dict(boxstyle="round", fc="w"),
-                    arrowprops=dict(arrowstyle="->"))
+    #anot = plt.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
+    #                bbox=dict(boxstyle="round", fc="w"),
+    #                arrowprops=dict(arrowstyle="->"))
     
-    anot.set_visible(True)
+    #anot.set_visible(True)
     plt.ylim(bottom=minVar-0.000001, top=maxVar)
     plt.xlim(left=0.0)
     plt.xlabel('$l_{corr} [l_{0}]$', fontsize=16)
     plt.ylabel('$ var (V(r)$', fontsize=16)
+    plt.ticklabel_format(axis="y", style="sci", scilimits=(0,0))
+    
     cbar = plt.colorbar()
+    if ia == 0:
+        plt.title("Coulomb interaction")
+    else:
+        plt.title("Short range interaction")
+        
+    
     cbar.ax.set_yticklabels(['no Data','FQH-state','transition regime','insulating state'])
     plt.draw()
     plt.savefig("phasePlot.eps", format='eps')
     plt.show()
-
+    print ("Hier")
     #plt.scatter(results[:,0],results[:,1]* unitCellSize / 200, c=results[:,3])
-    plt.hist(results[:,3])
+    #plt.hist(results[:,3])
     #plt.xlim(left=minVar-0.000005, right=maxVar)
     #plt.colorbar()
-    plt.show()
+    #plt.show()
     intermediateLow = 30
     intermediateTop = 60
     
@@ -852,8 +893,8 @@ def plot_rev_over_bandwith(data, Ne, interaction):
         theData = allData[allData[:, impCountIndex] == 4800]
     
     print (theData.shape)
-    
-   
+    coulMittelWerte = None
+    coulMittelWerte2 = None  
     electronNumberDataArray =theData[theData[:,0]==Ne]
     for ia in interaction:
         HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==ia]
@@ -949,10 +990,12 @@ def plot_rev_over_bandwith(data, Ne, interaction):
             
         plt.plot(hcMittelWerte[:,0], hcMittelWerte[:,2]*9.871/1000,'ro', label=" SRI Mean values")
         plt.plot(hcMittelWerte2[:,0], hcMittelWerte2[:,2]*9.871/1000,'ro', label='')
+        
         plt.errorbar(hcMittelWerte[:,0], hcMittelWerte[:,2]*9.871/1000,np.sqrt(hcMittelWerte[:,3])*9.871/1000, hcMittelWerte[:,5])
-        plt.plot(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label=" CI Mean values")
-        plt.plot(coulMittelWerte2[:,0], (coulMittelWerte2[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label='')
-        plt.errorbar(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,np.sqrt(coulMittelWerte[:,3])*9.871/1000, coulMittelWerte[:,5])
+        if coulMittelWerte is not None:
+            plt.plot(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label=" CI Mean values")
+            plt.plot(coulMittelWerte2[:,0], (coulMittelWerte2[:,2]-evMaxIndex_Coulomb)*9.871/1000,'bo', label='')
+            plt.errorbar(coulMittelWerte[:,0], (coulMittelWerte[:,2]-evMaxIndex_Coulomb)*9.871/1000,np.sqrt(coulMittelWerte[:,3])*9.871/1000, coulMittelWerte[:,5])
         plt.xlim(1e-10,1e-2)
         plt.ylim(1e-3,2)
         plt.xlabel('$\Delta E_{0,2} [enu]$', fontsize=16)
@@ -978,6 +1021,10 @@ def plot_rev_over_bandwith(data, Ne, interaction):
         plt.show()
         #ax = plt.scatter(bandwidth/np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
         ax = plt.scatter(np.sqrt(HCArray[:,13]), HCArray[:,evMaxIndex]*9.871/1000)
+        
+        mplcursors.cursor(ax).connect(
+         "add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
+
         #plt.plot(mittel[:,0],mittel[:1],'o')
         print("Maximum x-value = ", np.max(bandwidth/np.sqrt(HCArray[:,13])))
         mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(HCArray[sel.target.index,:])))
@@ -1026,12 +1073,50 @@ def plot_rev_over_bandwith(data, Ne, interaction):
         print (smallBandwidthArray.shape)
         ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
         mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
-        plt.suptitle("Small bandwidth ( 0 up to numerical precision)")
+        if ia == 0:
+            plt.suptitle("Small bandwidth ( 0 up to numerical precision), Coulomb interaction")
+        else:
+            plt.suptitle("Small bandwidth ( 0 up to numerical precision), SR interaction")
         plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
         plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
         plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
         plt.xlim(left=0.0, right=1.5e-03)
+        print("Interaction = ", ia)
         plt.show()
+
+def smallBandWidthPlot(allData,Ne,ia):
+    if Ne == 5:
+        theData = allData[allData[:, impCountIndex] == 4000]
+        
+    if Ne == 6: 
+        print("6")
+        theData = allData[allData[:, impCountIndex] == 4800]
+    
+    print (theData.shape)
+      
+    electronNumberDataArray =theData[theData[:,0]==Ne]
+    
+    HCArray = electronNumberDataArray[electronNumberDataArray[:,interactionIndex]==ia]
+    if ia == 0:
+        # remove senseless data
+        HCArray = HCArray[np.where(HCArray[:,evMaxIndex]> 60)]
+       
+    
+    smallBandwidthArray = HCArray[np.where(np.abs(HCArray[:,16]-HCArray[:,14])< 1e-23)]
+    print(smallBandwidthArray[1,:])
+    print (smallBandwidthArray.shape)
+    ax = plt.scatter(np.sqrt(smallBandwidthArray[:,13]), smallBandwidthArray[:,evMaxIndex]*9.871/1000)
+    mplcursors.cursor(ax).connect("add", lambda sel: sel.annotation.set_text(dataSetToString(smallBandwidthArray[sel.target.index,:])))
+    if ia == 0:
+        plt.suptitle("Small bandwidth ( 0 up to numerical precision), Coulomb interaction")
+    else:
+        plt.suptitle("Small bandwidth ( 0 up to numerical precision), SR interaction")
+    plt.xlabel('$\sqrt{var(V(r)}$)', fontsize=16)
+    plt.ylabel('$ r_{ev} [l_{0}]$', fontsize=16)
+    plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
+    plt.xlim(left=0.0, right=1.5e-03)
+    print("Interaction = ", ia)
+    plt.show()
 
 def createScatterbandwithvarlcorr(data, Ne, ia):
     print ("Start bandwidthscatter")
@@ -1144,6 +1229,81 @@ def printDataReadable(data):
         
         print ('---------------------------------------')
               
+
+
+def plot_rev_over_lorr_fixvariance(data, Ne, ia, variances, index = 8,bandWidthLimit = False):
+    if Ne == 5:
+        theData = allData[allData[:, impCountIndex] == 4000]
+        
+    if Ne == 6: 
+        theData = allData[allData[:, impCountIndex] == 4800]
+    colors_symbols= get_color()
+    unitCellSize = np.sqrt(2 * np.pi * 3 * Ne)
+    results = np.empty((0,4))
+    electronNumberDataArray = theData[theData[:, 0] == Ne]  
+    homoValue = 0
+    iaArray = electronNumberDataArray[electronNumberDataArray[:, interactionIndex] == ia]
+    if ia == coulombInteraction:
+        iaArray = iaArray[iaArray[:,evMaxIndex] > 0.5*evMaxIndex_Coulomb]
+        homoValue = evMaxIndex_Coulomb
+    
+    if bandWidthLimit is True:
+        iaArray = iaArray[np.where(np.abs((iaArray[:,16]-iaArray[:,14])/(iaArray[:,17]-iaArray[:,14]))< 0.5)]
+    print ("Total data points in plot_rev_over_lorr_fixvariance" + str(len(iaArray)))
+    
+    for variance in variances:
+        color_symbol = next(colors_symbols)
+        print ("Evaluate variance ",variance)
+        labelString = "$< V- < V^{2} > > ^{2} =" + str(variance) +"$"
+        varLowLimit = variance*0.99
+        varHighLimit = variance*1.01
+        plotData = iaArray[np.where(iaArray[:,varIndex]>varLowLimit)]
+        plotData = plotData[np.where(plotData[:,varIndex]<varHighLimit)]
+        means = getMeanValuesOfIndex(plotData,index,evMaxIndex,15)
+        print (len(plotData))
+        bins = np.linspace(0.0,np.max(plotData[:,evMaxIndex]),10)
+        print (bins)
+        digitize = np.digitize(plotData[:,evMaxIndex],bins)
+        print (digitize)
+        plt.plot(plotData[:,index]* unitCellSize / 200, plotData[:,evMaxIndex]*unitCellSize/1000.0,'o',color= color_symbol[0], label=labelString)
+        
+        
+        plt.plot(means[:,0]* unitCellSize / 200, means[:,1]*unitCellSize/1000.0,'+-',color = color_symbol[0],ms = 20,label = "") 
+    plt.xlabel("$l_{corr} [l_{0}]$")
+    plt.ylabel("$r_{ev} [l_{0}]$")
+    plt.legend()
+    plt.show()
+     
+def getMeanValuesOfIndex(data, xIndex, yIndex, noOfBins):
+    # get Max and Min of x Index                                
+    startVal = 0
+    # create linspace
+    bins = np.linspace(startVal,np.max(data[:,xIndex]),noOfBins)
+    print (bins)
+    interVallength = bins[1]-bins[0]
+    lowerEnd = startVal
+    count = 0
+    retVal = np.empty((0,3))
+    # iterate over data fow which val in xIndex is in an intervall
+    for upperEnd in bins:
+        if upperEnd == startVal:
+            count = 0.5
+            continue
+        binData = data[np.where(data[:,xIndex]> lowerEnd)]
+        binData = binData[np.where(binData[:,xIndex]< upperEnd)]
+        print ("Bin Data", binData[:,(xIndex,yIndex)], len(binData))
+        if len(binData) > 0:
+                    
+        
+            # calculate mean of yValues
+            meanY = np.nanmean(binData[:,yIndex])
+            varY = np.nanvar(binData[:,yIndex])
+            xVal = count*interVallength
+            retVal = np.vstack((retVal,(count*interVallength, meanY,varY)))
+        count = count +1
+        lowerEnd = upperEnd
+    print (retVal)
+    return retVal
 NeIndex = 0  # 1
 NmIndex = 1  # 2
 interactionIndex = 3  # 4 
@@ -1156,7 +1316,8 @@ twodcorrelationx = 9  # 10
 twodcorrelationy = 10  # 11
 evMaxIndex = 11  # 12
 vvMaxIndex = 12  # 13
-
+coulombInteraction = 0
+hcInteraction = 1
 gsIndex = 14  # 14
 varIndex = 13
 gapStateIndex = 17  # 17
@@ -1185,16 +1346,25 @@ print (extraColumn.shape)
 allData = np.append(allData, extraColumn, axis=1)
 
 print (allData.shape)
-plot_rev_over_bandwith(allData, 6,[0,1])
-plot_rev_over_bandwith(allData, 6,1)
-createScatterbandwithvarlcorr(allData, 6, 1)
-createScatterbandwithvarlcorr(allData, 6, 0)
+plot_rev_over_lorr_fixvariance(allData, 6,1,[4e-07, 2.1e-06, 6.5e-06,1.3e-05],8,True)
+createPhaseDiagram(allData, 6,0,8,True)
+createPhaseDiagram(allData, 6,1,8,True)
 
+smallBandWidthPlot(allData,6,1)
+smallBandWidthPlot(allData,6,0)
+plotDataAndExponentialFit(allData,6,0)
 createPhaseDiagram(allData, 6,0)
-createPhaseDiagram(allData, 6,1)
+#createPhaseDiagram(allData, 6,1)
+#createScatterbandwithvarlcorr(allData, 6, 1)
+createScatterbandwithvarlcorr(allData, 6, 0)
+plot_rev_over_bandwith(allData, 6,[0])
+plot_rev_over_bandwith(allData, 6,[0,1])
+plot_rev_over_bandwith(allData, 6,[1])
 
 sys.exit()
 plotDataAndExponentialFit(allData,6,1)
-plotDataAndExponentialFit(allData,6,0)
+
 createPhaseDiagram(allData, 6,0)
 dataset1 = allData
+
+    

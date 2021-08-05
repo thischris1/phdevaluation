@@ -40,14 +40,14 @@ def checkFitPoints(fitStart, fitEnd,maxPos):
             return fitStart, fitEnd
 
 
-def fitAndPlot2(fileName, normalize, plot =False):
+def fitAndPlot2(fileName, normalize, leftValinit = 0,plot =False):
     
     print (fileName)
     
     corrFile=np.loadtxt(fileName)
     
   
-    print ("First in corrfile x",corrFile[0,0])
+    print ("First in corrfile x",corrFile[0,:])
     r = corrFile[:,0]
     evCorr = corrFile[:,1]
     r = r[:400]
@@ -64,8 +64,8 @@ def fitAndPlot2(fileName, normalize, plot =False):
         r = r+1
         evCorr = evCorr/r
     
-    maxPos = np.argmax(evCorr)
-    maxCorrVal = np.amax(evCorr)
+    maxPos = np.argmax(evCorr[leftValinit:])
+    maxCorrVal = np.amax(evCorr[leftValinit:])
     maxCorrVal = evCorr[maxPos]
     print ("MAximum value is " + str(maxCorrVal) + " at " + str(maxPos))
     print (maxPos)
@@ -85,8 +85,12 @@ def fitAndPlot2(fileName, normalize, plot =False):
     print ("Left end is " + str(leftVal))
      # now for right... 
     for index in range(3*maxPos):
-        if evCorr[maxPos+index] > threshold:
-            continue
+        try:
+            if evCorr[maxPos+index] > threshold:
+                continue
+        except IndexError:
+            print ("Width = unknown")
+            rightVal = maxPos+20
         else:
             rightVal = maxPos+index
             break
@@ -95,4 +99,7 @@ def fitAndPlot2(fileName, normalize, plot =False):
         
     width = rightVal -leftVal
     print ("Width = " + str(width))
+    if plot is True:
+        plt.plot(r,evCorr)
+        plt.show()
     return (maxPos, width)

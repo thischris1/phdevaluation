@@ -26,8 +26,8 @@ class Test(unittest.TestCase):
 
     def testName(self):
         print ("Start")
-        startDir = "/home/chris/cluster/clusterResults2/6_18"
-        filehandle = open("testResults_6-18_revisited.dat", "w+")
+        startDir = "/home/chris/cluster/clusterResults2/6_18/coul/vosigma7_5e-05"
+        filehandle = open("testResults_fehlende_coul_vo_sigma7_e-5.dat", "w+")
         # find all dirs with dir_ in name
         for root, dirs, files in os.walk(startDir, topdown=False):
            # for name in files:
@@ -37,17 +37,24 @@ class Test(unittest.TestCase):
             for name in dirs:
                 if 'dir_' in name:
                     print(os.path.join(root, name))
-                    a = ParseDirectory(os.path.join(root, name))
-                    a.printValues(filehandle)
+                    try:
+                        a = ParseDirectory(os.path.join(root, name))
+                        a.printValues(filehandle)
+                    except Exception:
+                        continue   
                     count = count +1
                     print (count, dirCount)
- 
-    def atestSingleDir(self):
-        testDir = "/home/chris/cluster/clusterResults2/6_18/coul/vosigma1e-04/sigma0.025/dir_26"
-        a = ParseDirectory(testDir)
-        filehandle = open("testREsults.dat", "w+")
-        a.printValues(filehandle)
         filehandle.close()
+    def atestSingleDir(self):
+        testDir = "/home/chris/cluster/clusterResults2/6_18/coul/vosigma7_5e-05/sigma0035/vo002/dir_10"
+        a = ParseDirectory(testDir)
+        #filehandle = open("testREsults.dat", "w+")
+        #a.printValues(filehandle)
+        
+        a.printValues()
+        self.assertEquals(101,a.evMax[0])
+        self.assertAlmostEquals(101,a.evMax[0])
+        #filehandle.close()
     def atestPlotrevOverVariance(self):
         data = np.loadtxt("testREsults_6_18_hc_new.dat")
         print (data.shape)

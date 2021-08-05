@@ -21,7 +21,7 @@ import numpy as np
 
 import matplotlib 
 matplotlib.use("TkAgg")
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
 import tkinter as tk
@@ -160,10 +160,10 @@ class PageOne(tk.Frame):
         self.rcanvasbottom = FigureCanvasTkAgg(self.rfigure_correlation, self)
         self.lcanvasbottom.get_tk_widget().grid(row=7,column=1)
         self.rcanvasbottom.get_tk_widget().grid(row=7,column=2)
-        self.lcanvastop.show()
-        self.rcanvastop.show()
-        self.rcanvasbottom.show()
-        self.lcanvasbottom.show()
+        self.lcanvastop.draw()
+        self.rcanvastop.draw()
+        self.rcanvasbottom.draw()
+        self.lcanvasbottom.draw()
         self.lcorrlargeLabel = tk.Label(self,textvariable = self.lcorrLargeText)
         self.lcorrsmallLabel = tk.Label(self,textvariable = self.lcorrSmallText)
         self.lcorrsmallLabel.grid(row=8,column=2)
@@ -283,9 +283,9 @@ class GraphPage(tk.Frame):
         self.plot_autocorr2d.set_title("Autocorrelation l_{corr} =" +str(lcorr))
         self.plot_autocorr2d.contourf(autocorr2d)
         self.lcanvastop = FigureCanvasTkAgg(self.lfigure_potential, self)
-        self.lcanvastop.show()
+        self.lcanvastop.draw()
         self.rcanvastop = FigureCanvasTkAgg(self.rfigure_potential,self)
-        self.rcanvastop.show()
+        self.rcanvastop.draw()
         self.lcanvastop.get_tk_widget().grid(row=2,column=1)
         self.rcanvastop.get_tk_widget().grid(row=2,column=2)
         #self.lcanvastop.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)

@@ -7,6 +7,7 @@ from _operator import ne
 import os
 import Gaussian, CorrelationFit
 import numpy as np
+from pickle import FALSE
 class ParseDirectory(object):
     '''
     classdocs
@@ -109,6 +110,8 @@ class ParseDirectory(object):
                     self.vvMax = CorrelationFit.fitAndPlot2(self.vvCorrelationFile,True,plot = False)
                 except:
                     self.vvMax= "UNKNOWN"
+                
+                
             else:
                 self.vvMax= "UNKNOWN"
             
@@ -120,17 +123,41 @@ class ParseDirectory(object):
             self.spectrum = 'UNKNOWN'
             self.evMax= "UNKNOWN"
             self.vvMax= "UNKNOWN"
-    
-    def printValues(self, resultFile):
+    # Some sanity checks
+    def sanityCheck(self):
+        print ("Sanity check")
+        try:
+            evMaxValue = int(self.evMax[0])
+        except ValueError:
+            print ("Verkehrte Welt in "+ self.dir)
+            return False
+        print (" evMax= ", evMaxValue)
+        if self.interaction =='Coulomb' and evMaxValue < 30:
+                    print ("Suspicous data in ")
+                    print (self.evCorrelationFile, self.vvCorrelationFile)
+                    self.evMax = CorrelationFit.fitAndPlot2(self.evCorrelationFile,True,leftValinit = 30,plot = False)
+                    if self.evMax[0] < 31:
+                        print ("Even second fit did not return reasonable value")
+                        self.evMax = CorrelationFit.fitAndPlot2(self.evCorrelationFile,True,leftVal = 30,plot = True)
+                        newEvMax = input(" evMax")
+                        self.evMax = (newEvMax,1)
+                        print ("New evMax", self.evMax)
+                    return True
+        return True
+    def printValues(self, resultFile=None):
+        if self.sanityCheck() == False:
+            return
         print (self.__Ne, self.__Nm, self.__interaction, self.__impCount, self.__Vmax, self.__Vmin, self.__sigma,self.lcorr, np.ravel(self.results2d),  self.evMax[0], self.vvMax[0],  self.potVariance,self.spectrum)
-        resultFile.write(str(self.__Ne) + " ," +str(self.__Nm)+ " ," + str(self.__interaction)+" , ")
-        if self.__interaction == "COULOMB":
+        if resultFile is None:
+            return
+        resultFile.write(str(self.__Ne) + " " +str(self.__Nm)+ " " + str(self.__interaction)+"  ")
+        if self.__interaction == "Coulomb":
             resultFile.write(" 0 ")
         if self.__interaction == "SRI":
             resultFile.write(" 1 ")
             
-        resultFile.write(str(self.__impCount) + " ," + str(self.__Vmax)+ " ," + str(self.__Vmin) + " ," + str(self.__sigma) + " ," + str(self.lcorr)+ " ,")
-        resultFile.write( str(np.ravel(self.results2d))+ " ," +  str(self.evMax[0])+ " ," + str(self.vvMax[0])+ " ," +  str(self.__potVariance)+" , "+str(self.spectrum)+ "\n")
+        resultFile.write(str(self.__impCount) + " " + str(self.__Vmax)+ " " + str(self.__Vmin) + " " + str(self.__sigma) + " " + str(self.lcorr)+ " ")
+        resultFile.write( str(np.ravel(self.results2d))+ " " +  str(self.evMax[0])+ " " + str(self.vvMax[0])+ " " +  str(self.__potVariance)+"  "+str(self.spectrum)+ "\n")
  
     def printHeadLine(self,resultFile):
         
